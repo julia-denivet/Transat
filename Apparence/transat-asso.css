@@ -1,11 +1,11 @@
-body {
+.body_index {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Comic Neue', cursive;
 }
 
-section {
+.section_header {
     min-height: 150px;
     width: 100%;
     background-color: #acc9e7;
@@ -16,7 +16,7 @@ section {
     justify-content: space-evenly;
 }
 
-section p {
+.p_asso_transat {
     vertical-align: middle;
     font-size: 300%;
 }
@@ -25,24 +25,24 @@ section p {
     width: 9%;
 }
 
-header {
+.header {
     min-height: 50px;
     background-color: #e5dcf1;
     font-size: 20px;
 }
 
-header nav {
+.nav_header {
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding-top: 15px;
 }
-
-header a {
+.a_header {
     text-decoration: none;
+    color: #551A8B;
 }
 
-main {
+.main_footer {
     background-color: #e5dcf1;
     position: absolute;
     bottom: 300px;
@@ -55,7 +55,7 @@ main {
     padding-bottom: 10px;
 }
 
-footer {
+.footer {
     min-height: 300px;
     background-color: #acc9e7;
     bottom: 0;
@@ -66,12 +66,14 @@ footer {
     display: flex;
 }
 
-.footer {
+.img_footer {
     width: 50%;
 }
 
 .nav {
     position: relative;
+    background-color: #acc9e7 ;
+    width: 100%;
     bottom: 0;
     left: 0;
     right: 0;
@@ -131,4 +133,12 @@ footer {
 .body_pre_index
 {
     font-family: 'Comic Neue', cursive; 
+}
+
+/*INDEX*/
+
+.img_carousel_index
+{
+ width: 1000px;
+
 }
