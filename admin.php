@@ -87,6 +87,7 @@ else
 		{
 				include('admin/modpas.php');
 		}
+		
 	?>
 	
 
@@ -136,7 +137,6 @@ else
 			if(isset($_GET['mod']))
 			{
 				include('admin/resmod.php');
-
 			}
 		?>
 		<?php } ?>
@@ -151,19 +151,16 @@ else
 		<?php 
 			if(isset($_GET['new']))
 			{
-				echo"new article";
 				include('admin/artnew.php');
 			}
 			
 			if(isset($_GET['sup']))
 			{
-				echo"sup article";
 				include('admin/artsup.php');
 			}
 
 			if(isset($_GET['mod']))
 			{
-				echo"modifier article";
 				include('admin/artmod.php');
 			}
 		?>
@@ -172,8 +169,12 @@ else
 	
 	
 
-	<?php
-
+		<?php
+			if (isset($_GET['plan'])) 
+			{	?><a href="admin.php">retour</a>
+				<?php
+				include('admin/planadm.php');
+			}
 }
  ?>
 

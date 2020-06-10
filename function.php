@@ -72,4 +72,11 @@ function changmdp($oldmdp,$newmdp,$confmdp,$iduser)
 	var_dump($rep);
 
 }
+function newplan($title,$date,$hdeb,$mdeb,$hfin,$mfin,$lieu,$desc)
+{
+	$sql="INSERT INTO `agenda` ( `id_admin`, `date`, `description`, `titre`, `hdeb`, `mdeb`, `hfin`, `mfin`, `lieu`) VALUES (?,?,?,?,?,?,?,?,?);";
+	$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+	$q = $db->prepare($sql);
+	$q->execute(array($_SESSION['admid'],$date,$desc,$title,$hdeb,$mdeb,$hfin,$mfin,$lieu));
+}
 ?>
