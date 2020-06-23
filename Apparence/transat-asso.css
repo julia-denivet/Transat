@@ -1,0 +1,190 @@
+.body_index {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Comic Neue', cursive;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+.col-3 .col-8{
+    margin: 0;
+}
+
+.section_header {
+    min-height: 150px;
+    width: 100%;
+    background-color: #acc9e7;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.p_asso_transat {
+    vertical-align: middle;
+    font-size: 300%;
+}
+
+.logo {
+    width: 9%;
+}
+
+.header {
+    min-height: 50px;
+    background-color: #e5dcf1;
+    font-size: 20px;
+}
+
+.nav_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 15px;
+}
+.a_header {
+    text-decoration: none;
+    color: #551A8B;
+}
+
+.main_footer {
+    background-color: #e5dcf1;
+    position: absolute;
+    bottom: 300px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.footer {
+    min-height: 300px;
+    background-color: #acc9e7;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    justify-content: center;
+    display: flex;
+}
+
+.img_footer {
+    width: 50%;
+}
+
+.nav {
+    position: relative;
+    background-color: #acc9e7 ;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 50px;
+}
+
+.lateral {
+    min-height: 800px;
+    width: 400px;
+    background-color: #acc9e7;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+.agencement {
+    display: flex;
+    flex-direction: row;
+}
+
+.entete {
+    border-bottom: solid;
+    text-align: center;
+}
+
+
+/*PRE-INDEX*/
+
+.button_valider
+{
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+#pre_index_div_img
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pre_index_div_form
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px; 
+}
+
+.flex_pre_index
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.body_pre_index
+{
+    font-family: 'Comic Neue', cursive; 
+}
+
+/*INDEX*/
+
+.img_carousel_index
+{
+ width: 1000px;
+
+}
+
+#carouselExampleControls
+{
+    overflow: hidden;
+    width: 900px;
+    height: 500px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.carousel-item
+{
+    width: 900px ;
+}
+
+.div_asso_Trans
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: justify;
+    align-items: center;
+    margin-left: -15px;
+    height: 400px;
+    line-height: 1em;
+    font-size: 15px;
+    font-family: 'Comic Neue', cursive; 
+    margin-top: 5px;
+}
+
+.flex_row_index
+{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+}
