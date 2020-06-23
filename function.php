@@ -79,4 +79,11 @@ function newplan($title,$date,$hdeb,$mdeb,$hfin,$mfin,$lieu,$desc,$type)
 	$q = $db->prepare($sql);
 	$q->execute(array($_SESSION['admid'],$date,$desc,$title,$hdeb,$mdeb,$hfin,$mfin,$lieu,$type));
 }
+function supplan($id)
+{
+	$sql="DELETE FROM `agenda` WHERE `agenda`.`id` = ?";
+	$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+	$q = $db->prepare($sql);
+	$q->execute(array($id));
+}
 ?>

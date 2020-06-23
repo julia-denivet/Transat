@@ -3,6 +3,10 @@
 	{
 		newplan($_POST['nom'],$_POST['date'],$_POST['hdeb'],$_POST['mdeb'],$_POST['hfin'],$_POST['mfin'],$_POST['lieu'],$_POST['desc'],$_POST['type']);
 	}
+	if(isset($_POST['evsup']))
+	{
+		supplan($_POST['evsup']);
+	}
 ?>
 <form method="post" action="admin.php?plan">
 	<h1>ajouter un évennement</h1>

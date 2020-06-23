@@ -102,7 +102,18 @@ for ($h=0; $h <24 ; $h++)
 					     	<p>description : <?=$r['description']?></p>
 					     	<p>type : <?=$type?></p>
 					     	<button onclick="retfichEv(this)" class="ret-plan">Retour</button>
+					     	<?php
+					     	if(isset($_SESSION['admstat'])&&$_SESSION['admstat'] <= 1)
+					     	{
+					     		?>
+					     	<form method="post">
+					     		<button name="evsup" type="submit" value="<?=$r['id']?>">suprimer</button>
+					     	</form>
+					     		<?php
+					     	}
+					     	?>
 					     </div>
+
 				</div>
 				<?php
 				}
