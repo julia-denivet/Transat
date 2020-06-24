@@ -1,13 +1,30 @@
+
+body
+{
+    font-family:'Comic Neue', cursive ;
+}
+
+.lateral 
+{
+    transition: box-shadow 1s ,transform 1s;
+    transform: scale(1.01);
+    border-radius: 10px;
+    display: flex;
+    margin-top: 15px;
+}
 .body_index {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Comic Neue', cursive;
+    
 }
 
-main{
+.main_index
+{
     display: flex;
     flex-direction: row;
+    width: 100vw;
+	height: 78vh;
 }
 
 .col-3 .col-8{
@@ -51,28 +68,22 @@ main{
     color: #551A8B;
 }
 
-.main_footer {
-    background-color: #e5dcf1;
-    position: absolute;
-    bottom: 300px;
-    left: 0;
-    right: 0;
+.a_header:hover
+{
+    text-decoration: none;
+    color: #551A8B;
+}
+
+
+.footer {
+    
+    position: fixed;
+    bottom: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-.footer {
-    min-height: 300px;
-    background-color: #acc9e7;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: inline-block;
-    justify-content: center;
-    display: flex;
 }
 
 .img_footer {
@@ -89,23 +100,23 @@ main{
     top: 50px;
 }
 
-.lateral {
-    min-height: 800px;
-    width: 400px;
-    background-color: #acc9e7;
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 60px;
+
+
+#new_index
+{
+    text-align: center;
 }
 
 .agencement {
     display: flex;
     flex-direction: row;
+    height: 50vh;
 }
 
 .entete {
-    border-bottom: solid;
+    
     text-align: center;
+    height: 60vh;
 }
 
 
@@ -148,15 +159,16 @@ main{
 
 .img_carousel_index
 {
- width: 1000px;
-
+ width: 50vw;
+ height: 60vh;
+ border-radius: 20px;
 }
 
 #carouselExampleControls
 {
-    overflow: hidden;
-    width: 900px;
-    height: 500px;
+    
+    width: 80vw;
+    height: 60vh;
     margin-left: 5px;
     margin-top: 10px;
 }
@@ -166,25 +178,66 @@ main{
     width: 900px ;
 }
 
-.div_asso_Trans
+.carousel_flyer
 {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    text-align: justify;
-    align-items: center;
-    margin-left: -15px;
-    height: 400px;
-    line-height: 1em;
-    font-size: 15px;
-    font-family: 'Comic Neue', cursive; 
-    margin-top: 5px;
+    border-radius: 20px;
+    height: 70vh;
 }
 
-.flex_row_index
+.newletters_index
+{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    background-color: #acc9e7;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    border-radius: 20px;
+    text-shadow: ;
+}
+
+.newletters_index:hover
+{
+    box-shadow: 2px 2px 10px black; 
+}
+
+.index_flex
 {
     display: flex;
     flex-direction: row;
-    
-    justify-content: space-between;
+}
+
+#img_flyer
+{
+    width: 50vw;
+}
+
+#div_flyer_index
+{
+    margin-top: 50px;
+}
+
+.color_search {
+    color: #551A8B;
+    border-color: #551A8B;
+}
+
+.color_search:hover
+{
+    background-color: #551A8B;
+}
+
+.form_recherche_header
+{
+    margin-bottom: 0.5rem;
+}
+
+.flyer_texte_index
+{
+    display: flex;
+    flex-direction: column;
 }
