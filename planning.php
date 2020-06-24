@@ -56,20 +56,19 @@
 <table>
 <tr>
 	<td></td>
-	<td>Dimanche</td>
-	<td>Lundi</td>
-	<td>Mardi</td>
-	<td>Mercredi</td>
-	<td>Jeudi</td>
-	<td>Vendredi</td>
-	<td>Samedi</td>
-	
+	<td><b>D</b><b class="pasindex">imanche</b></td>
+	<td><b>L</b><b class="pasindex">undi</b></td>
+	<td><b>M</b><b class="pasindex">ardi</b></td>
+	<td><b>M</b><b class="pasindex">ercredi</b></td>
+	<td><b>J</b><b class="pasindex">eudi</b></td>
+	<td><b>V</b><b class="pasindex">endredi</b></td>
+	<td><b>S</b><b class="pasindex">amedi</b></td>
 </tr>
 <?php
 for ($h=0; $h <24 ; $h++) 
 { ?>
 	<tr>
-		<td class="planh"><?=$h?> h</td>
+		<td class="planh pasindex"><?=$h?> h</td>
 		<?php
 		for ($j=0; $j <7 ; $j++) 
 		{ 	?>

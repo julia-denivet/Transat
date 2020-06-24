@@ -16,6 +16,12 @@
         <main class="container-fluid">
             <div class="index_flex">
                 <div class="newletters_index">
+                        <div class="plan-index">
+                            <p>PLANNING</p>
+                            <div id="newsplan">
+                                <?php include('planning.php')?>
+                            </div>
+                        </div>
                         <div class="entete">
                             <p>NEWSLETTERS</p>
                             <div>

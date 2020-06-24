@@ -241,3 +241,13 @@ body
     display: flex;
     flex-direction: column;
 }
+
+/*planning-index*/
+#newsplan #planbutt
+{
+    display: none;
+}
+#newsplan .pasindex
+{
+    display: none;
+}
