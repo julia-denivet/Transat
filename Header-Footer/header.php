@@ -9,11 +9,26 @@
 </section>
 <header class="header">
     <nav class="nav_header">
-        <a class="a_header"  href="">Présentation générale</a>
-        <a class="a_header" href="">Calendrier</a>        
-        <a class="a_header" href="">Ressources</a>
-        <a class="a_header" href="">Vide dressing</a>
-        <a class="a_header" href="admin.php">admin</a>
+        <a class="a_header"  href="index.php">Présentation générale</a>
+        <a class="a_header" href="calendrier.php">Calendrier</a>        
+        <a class="a_header" href="ressources.php">Ressources</a>
+        <a class="a_header" href="vide-dressing.php">Vide dressing</a>
+        <div class="form_recherche_header">
+            <form class="form-inline my-2 my-lg-0 ">
+                <section>
+                    <article>
+                        <input class="form-control mr-sm-2 " id="autotransat" type="search" onkeyup="autocompletiontransat('0')" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success color_search" type="submit">Recherche</button>
+                    </article>
+                    <article id="datatransat">
+
+                    </article>
+                    
+                </section>
+               
+            </form>
+        </div>
+        
         
     </nav>
 </header>
