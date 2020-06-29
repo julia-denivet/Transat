@@ -2,18 +2,7 @@
 
 session_start();
 
-if (!isset($_GET['id'])) 
-{
-    $connexion = mysqli_connect('localhost', 'root', '', 'transat');
-    mysqli_set_charset($connexion, "utf8");
-    $sql = "SELECT * FROM article UNION SELECT * FROM ressources WHERE id=".$_GET['id']."";
-    $query = mysqli_query($connexion, $sql);
 
-}
-else 
-{
-    header('location: index.php');
-}
 
 ?>
 
@@ -31,7 +20,16 @@ else
     </head>
 
     <body class="body_index">
-        <?php include('Header-Footer/header.php'); ?>
+        <?php include('Header-Footer/header.php'); 
+
+        
+
+        
+        
+        
+        ?>
+
+        
         <main class="container-fluid">
             <section>
                 <article>
@@ -49,8 +47,21 @@ else
                     </div>
                 </article>
                 <article>
-                <?php while ($data = mysqli_fetch_assoc($query))
-                {
+                <?php 
+                 if (isset($_GET['id'])) 
+                 {
+                     $connexion = mysqli_connect('localhost', 'root', '', 'transat');
+                     var_dump($connexion);
+                     mysqli_set_charset($connexion, "utf8");
+                     $sql = "SELECT * FROM article WHERE id=16 UNION SELECT * FROM ressources WHERE id= 54";
+                     var_dump($sql);
+                     $query = mysqli_query($connexion, $sql);
+                     while ($data = mysqli_fetch_assoc($query))
+
+                     {
+         
+                 }
+                
                    
                 ?>
                     <div>
