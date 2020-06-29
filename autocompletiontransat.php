@@ -7,8 +7,12 @@
     $query = mysqli_query($connexion,$sql);
     while ($data = mysqli_fetch_assoc($query)) 
     {
-       
+      { ?>
+         <a  href="element.php?id=<?=$data['id']?>"><div><?=$data['titre']?></div></a>
+      <?php
+     } 	
+
     }
  }
 
-?>
+?> 
