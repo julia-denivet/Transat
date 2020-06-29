@@ -13,8 +13,11 @@
     <body>
         <?php include('Header-Footer/header.php'); ?>
         <main>
-           
-                
+           <section id="plan">
+               <?php
+                    include('planning.php'); 
+               ?>
+           </section>       
         </main>
         <?php include('Header-Footer/footer.php'); ?>
     </body>
