@@ -51,12 +51,11 @@ session_start();
                  if (isset($_GET['id'])) 
                  {
                      $connexion = mysqli_connect('localhost', 'root', '', 'transat');
-                     var_dump($connexion);
                      mysqli_set_charset($connexion, "utf8");
-                     $sql = "SELECT * FROM article WHERE id=16 UNION SELECT * FROM ressources WHERE id= 54";
-                     var_dump($sql);
+                     $sql = "SELECT * FROM article  WHERE id= '".$_GET['id']."' UNION SELECT * FROM ressources WHERE id='".$_GET['id']."'";
                      $query = mysqli_query($connexion, $sql);
                      while ($data = mysqli_fetch_assoc($query))
+                    var_dump($data);
 
                      {
          

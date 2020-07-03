@@ -1,5 +1,5 @@
 <?php
- if (!empty($_GET['str'])) 
+ if (!empty($_GET['srt'])) 
  {
     $connexion = mysqli_connect('localhost', 'root','', 'transat');
     mysqli_set_charset($connexion, "utf8");
