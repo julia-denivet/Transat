@@ -20,60 +20,58 @@ session_start();
     </head>
 
     <body class="body_index">
-        <?php include('Header-Footer/header.php'); 
+        <?php include('Header-Footer/header.php');?>
 
         
-
-        
-        
-        
-        ?>
-
-        
-        <main class="container-fluid">
-            <section>
-                <article>
-                    <div>
-                        Titre
+        <main id="element">
+            <section id="element_affichage">
+                <article id="element_affichage_header">
+                    <div class="element_affichage_compartiment">
+                        <h1>Titre</h1>
                     </div>
-                    <div>
-                        Catégories
+                    <div class="element_affichage_compartiment">
+                        <h1>Catégories</h1>
                     </div>
-                    <div>
-                        date
+                    <div class="element_affichage_compartiment">
+                        <h1>Date</h1>
                     </div>
-                    <div>
-                        article
+                    <div class="element_affichage_compartiment">
+                        <h1>Article</h1>
                     </div>
                 </article>
-                <article>
+                <article id="element_affichage_element"> 
                 <?php 
-                 if (isset($_GET['id'])) 
-                 {
-                     $connexion = mysqli_connect('localhost', 'root', '', 'transat');
-                     mysqli_set_charset($connexion, "utf8");
-                     $sql = "SELECT * FROM article  WHERE id= '".$_GET['id']."' UNION SELECT * FROM ressources WHERE id='".$_GET['id']."'";
-                     $query = mysqli_query($connexion, $sql);
-                     while ($data = mysqli_fetch_assoc($query))
-                    var_dump($data);
-
-                     {
+                    if (isset($_GET['id'])) 
+                        {
+                        $connexion = mysqli_connect('localhost', 'root', '', 'transat');
+                        mysqli_set_charset($connexion, "utf8");
+                        $sql = "SELECT * FROM article  WHERE id= '".$_GET['id']."' UNION SELECT * FROM ressources WHERE id='".$_GET['id']."'";
+                        $query = mysqli_query($connexion, $sql);   
          
-                 }
+                    }
                 
                    
                 ?>
-                    <div>
-                        <?php echo $data['titre']; ?>
+                <?php
+                     while ($data = mysqli_fetch_assoc($query))
+                     {
+                        date_default_timezone_set('Europe/Paris');
+                        $now = $data['date']; 
+                        $newDate = date("d-m-Y", strtotime($now));
+                       
+
+                ?>
+                    <div class="element_affichage_compartiment">
+                        <?=$data['titre']?>
                     </div>
-                    <div>
-                        <?php echo $data['categorie']; ?>
+                    <div class="element_affichage_compartiment">
+                        <?=$data['categorie']?>
                     </div>
-                    <div>
-                        <?php echo $data['date'];   ?>
+                    <div class="element_affichage_compartiment">
+                        <?=$newDate?>
                     </div>
-                    <div>
-                        <?php echo $data['article']; ?>
+                    <div class="element_affichage_compartiment" id="element_article">
+                        <?=$data['article']?>
                     </div>
 
                 <?php
