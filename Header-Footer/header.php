@@ -11,8 +11,9 @@
     <nav class="nav_header">
         <a class="a_header"  href="index.php">Présentation générale</a>
         <a class="a_header" href="calendrier.php">Calendrier</a>        
-        <a class="a_header" href="ressources.php">Ressources</a>
-        <a class="a_header" href="vide-dressing.php">Vide dressing</a>
+        <a class="a_header" href="ressource.php">Ressources</a>
+        <a class="a_header" href="article.php">Articles</a>
+        <!--<a class="a_header" href="vide-dressing.php">Vide dressing</a> !-->
         <div class="form_recherche_header">
             <form class="form-inline my-2 my-lg-0 ">
                 <section>

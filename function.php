@@ -86,4 +86,25 @@ function supplan($id)
 	$q = $db->prepare($sql);
 	$q->execute(array($id));
 }
+
+function page($page,$nb,$tab)
+{
+	$ofset=$page*$nb;
+	$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+
+	$q = $db->prepare("SELECT * FROM ".$tab." ORDER BY date LIMIT ".$ofset." , ".$nb." ;");
+	$q->execute();
+	//$q->debugDumpParams();
+	$rep=$q->fetchAll();
+	return $rep;
+}
+function read($id,$tab)
+{
+	$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+	$q = $db->prepare("SELECT * FROM ".$tab." WHERE id=".$id.";");
+	$q->execute();
+	//$q->debugDumpParams();
+	$rep=$q->fetchAll();
+	return $rep;
+}
 ?>
