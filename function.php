@@ -107,4 +107,17 @@ function read($id,$tab)
 	$rep=$q->fetchAll();
 	return $rep;
 }
+//function auto
+function verifsession()
+{
+	if(!isset($_SESSION['user'])&&stristr($_SERVER['PHP_SELF'], 'pre-index.php') !="pre-index.php")
+	{
+		header("Location:pre-index.php");
+	}
+
+
+
+
+}
+verifsession();
 ?>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('function.php');
+?>
 <html>
     <head>
         <link rel="stylesheet" href="Apparence/transat-asso.css">
