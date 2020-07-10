@@ -1,10 +1,28 @@
 <?php 
 	if(isset($_POST['res']))
-	{
+	{   
+        $type='';
+        if(isset($_POST['S']))
+        {
+            $type.="S";
+        }
+        if(isset($_POST['T']))
+        {
+            $type.="T";
+        }
+        if(isset($_POST['P']))
+        {
+            $type.="P";
+        }
+        if(isset($_POST['A']))
+        {
+            $type.="A";
+        }
+        
 		$linkbd = mysqli_connect("localhost","root","","transat");
 		$_POST['titre']=addslashes($_POST['titre']);
 		$_POST['res']=addslashes($_POST['res']);
-		$sql="INSERT INTO `ressources` (`id`,`titre`,`id_admin`, `date`, `categorie`, `article`) VALUES (NULL,'".$_POST['titre']."', '".$_SESSION['admid']."', NOW(), '".$_POST['catres']."', '".$_POST['res']."');";
+		$sql="INSERT INTO `ressources` (`id`,`titre`,`id_admin`, `date`, `categorie`, `article`,`type`) VALUES (NULL,'".$_POST['titre']."', '".$_SESSION['admid']."', NOW(), '".$_POST['catres']."', '".$_POST['res']."','".$type."');";
 		$a=mysqli_query($linkbd,$sql);
 	}
 	var_dump($_POST);
@@ -43,11 +61,16 @@
 </div>
 <div id="Editor" class="editor" contenteditable="true"></div>
 
-<input id="textzone" type="hidden"  name="res" value=''>
+    <input id="textzone" type="hidden"  name="res" value=''>
 
-
-
-
+    <input type="checkbox" name="S">
+    <label>Santé</label>
+    <input type="checkbox" name="T">
+    <label>Transgenre</label>
+    <input type="checkbox" name="P">
+    <label>Proche</label>
+    <input type="checkbox" name="A">
+    <label>Autre</label>
 	<input type="submit" name="newres">
 </form>
 <script type="text/javascript">

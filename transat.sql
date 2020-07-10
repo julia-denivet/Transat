@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 10 juil. 2020 à 13:22
+-- Généré le :  ven. 10 juil. 2020 à 14:16
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -135,16 +135,18 @@ CREATE TABLE IF NOT EXISTS `article` (
   `date` datetime NOT NULL,
   `categorie` varchar(255) NOT NULL,
   `article` text NOT NULL,
+  `type` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `article`
 --
 
-INSERT INTO `article` (`id`, `titre`, `id_admin`, `date`, `categorie`, `article`) VALUES
-(15, 'k', 1, '2020-06-10 12:50:54', 'juridique', '<b>a</b>'),
-(16, 'z', 1, '2020-06-10 09:03:22', 'juridique', 'l<hr<');
+INSERT INTO `article` (`id`, `titre`, `id_admin`, `date`, `categorie`, `article`, `type`) VALUES
+(15, 'k', 1, '2020-06-10 12:50:54', 'juridique', '<b>a</b>', ''),
+(16, 'z', 1, '2020-06-10 09:03:22', 'juridique', 'l<hr<', ''),
+(17, 'ddddddd', 10, '2020-07-10 16:14:20', 'juridique', '<div align=\"center\">ssssssssssssssssssssssssssssssssssssssssssssssssssssss</div><div align=\"right\"><ul><li>sssssssssssssssssssss</li><li>qqqqqqqqqqqqqqq</li><li>xxxxxxxxxxxxxxx</li></ul><h1>vvvvvvvvvvvvvvvvvvvvv</h1><div>sssssssss</div><div><br></div></div>', 'SA');
 
 -- --------------------------------------------------------
 
@@ -160,23 +162,25 @@ CREATE TABLE IF NOT EXISTS `ressources` (
   `date` datetime NOT NULL,
   `categorie` varchar(255) NOT NULL,
   `article` text NOT NULL,
+  `type` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `ressources`
 --
 
-INSERT INTO `ressources` (`id`, `titre`, `id_admin`, `date`, `categorie`, `article`) VALUES
-(51, 'dd', 10, '2020-06-10 13:07:13', 'juridique', 'dds<hr><hr>dd<i>ddddddddddd<u>sssssssssss</u></i>'),
-(50, 'll', 1, '2020-06-10 12:52:03', 'juridique', 'n'),
-(49, 'eee', 1, '2020-06-09 20:57:31', 'juridique', 'ee<hr><hr>'),
-(43, 't', 1, '2020-06-09 18:17:50', 'juridique', '<div>kkkkkkkkk<b>jjj</b></div><div><hr><hr></div>'),
-(44, '', 1, '2020-06-09 20:50:53', 'juridique', 'eeeeeeeeee'),
-(45, 'f', 1, '2020-06-09 20:52:31', 'juridique', ''),
-(46, '', 1, '2020-06-09 20:54:30', 'juridique', '<hr><hr><hr><hr><hr>'),
-(47, 'f', 1, '2020-06-09 20:55:01', 'juridique', 'r<hr><hr><hr>rrr<hr><hr><hr><hr><hr><hr><hr><hr>r'),
-(48, 'llpp', 1, '2020-06-10 12:53:34', 'juridique', '<div align=\"center\">k<i>nnl\'eeecc<b>ccccccccccccccccc<u>xxxxxxxxxxxxxxx</u></b></i><br></div>');
+INSERT INTO `ressources` (`id`, `titre`, `id_admin`, `date`, `categorie`, `article`, `type`) VALUES
+(51, 'dd', 10, '2020-06-10 13:07:13', 'juridique', 'dds<hr><hr>dd<i>ddddddddddd<u>sssssssssss</u></i>', ''),
+(50, 'll', 1, '2020-06-10 12:52:03', 'juridique', 'n', ''),
+(49, 'eee', 1, '2020-06-09 20:57:31', 'juridique', 'ee<hr><hr>', ''),
+(43, 't', 1, '2020-06-09 18:17:50', 'juridique', '<div>kkkkkkkkk<b>jjj</b></div><div><hr><hr></div>', ''),
+(44, '', 1, '2020-06-09 20:50:53', 'juridique', 'eeeeeeeeee', ''),
+(45, 'f', 1, '2020-06-09 20:52:31', 'juridique', '', ''),
+(46, '', 1, '2020-06-09 20:54:30', 'juridique', '<hr><hr><hr><hr><hr>', ''),
+(47, 'f', 1, '2020-06-09 20:55:01', 'juridique', 'r<hr><hr><hr>rrr<hr><hr><hr><hr><hr><hr><hr><hr>r', ''),
+(48, 'llpp', 1, '2020-06-10 12:53:34', 'juridique', '<div align=\"center\">k<i>nnl\'eeecc<b>ccccccccccccccccc<u>xxxxxxxxxxxxxxx</u></b></i><br></div>', ''),
+(52, 'test ,yolo', 10, '2020-07-10 16:08:56', 'juridique', '<div align=\"right\">yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyrrrrrrrrrrrrrrrrr**</div><div align=\"right\"><ul><li><h1>tttttttttttttttttttttttttttttttttttttttttttttttttttttttt</h1></li><li><div align=\"justify\"><h1>tttttttttttttttttttttttttttttttttttttttttrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrtttttttttttttttttttttttttttttttttttttttttttttttt</h1></div></li></ul></div>', 'TP');
 
 -- --------------------------------------------------------
 

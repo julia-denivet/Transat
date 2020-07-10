@@ -1,10 +1,27 @@
 <?php 
 	if(isset($_POST['art']))
 	{
+         $type='';
+        if(isset($_POST['S']))
+        {
+            $type.="S";
+        }
+        if(isset($_POST['T']))
+        {
+            $type.="T";
+        }
+        if(isset($_POST['P']))
+        {
+            $type.="P";
+        }
+        if(isset($_POST['A']))
+        {
+            $type.="A";
+        }
 		$linkbd = mysqli_connect("localhost","root","","transat");
 		$_POST['titre']=addslashes($_POST['titre']);
 		$_POST['art']=addslashes($_POST['art']);
-		$sql="INSERT INTO `article` (`id`,`titre`,`id_admin`, `date`, `categorie`, `article`) VALUES (NULL,'".$_POST['titre']."', '".$_SESSION['admid']."', NOW(), '".$_POST['catres']."', '".$_POST['art']."');";
+		$sql="INSERT INTO `article` (`id`,`titre`,`id_admin`, `date`, `categorie`, `article`,`type`) VALUES (NULL,'".$_POST['titre']."', '".$_SESSION['admid']."', NOW(), '".$_POST['catres']."', '".$_POST['art']."','".$type."');";
 		$a=mysqli_query($linkbd,$sql);
 	}
 	var_dump($_POST);
@@ -45,7 +62,14 @@
 
 <input id="textzone" type="hidden"  name="art" value="">
 
-
+    <input type="checkbox" name="S">
+    <label>Santé</label>
+    <input type="checkbox" name="T">
+    <label>Transgenre</label>
+    <input type="checkbox" name="P">
+    <label>Proche</label>
+    <input type="checkbox" name="A">
+    <label>Autre</label>
 
 
 	<input type="submit" name="newres">
