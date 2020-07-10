@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 24 juin 2020 à 13:53
+-- Généré le :  ven. 10 juil. 2020 à 13:22
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -177,6 +177,25 @@ INSERT INTO `ressources` (`id`, `titre`, `id_admin`, `date`, `categorie`, `artic
 (46, '', 1, '2020-06-09 20:54:30', 'juridique', '<hr><hr><hr><hr><hr>'),
 (47, 'f', 1, '2020-06-09 20:55:01', 'juridique', 'r<hr><hr><hr>rrr<hr><hr><hr><hr><hr><hr><hr><hr>r'),
 (48, 'llpp', 1, '2020-06-10 12:53:34', 'juridique', '<div align=\"center\">k<i>nnl\'eeecc<b>ccccccccccccccccc<u>xxxxxxxxxxxxxxx</u></b></i><br></div>');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `stat`
+--
+
+DROP TABLE IF EXISTS `stat`;
+CREATE TABLE IF NOT EXISTS `stat` (
+  `ip` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `stat`
+--
+
+INSERT INTO `stat` (`ip`, `status`) VALUES
+('eb7fdf81fea97a2197b5c822987e6aaf66160564be20fdc77b20cfd185bdbcea', 'P');
 
 -- --------------------------------------------------------
 

@@ -1,6 +1,46 @@
 <?php
 session_start();
 include('function.php');
+if(isset($_POST['user']))
+{
+    switch ($_POST['user']) 
+    {
+        case 'stupide':
+            header("location: pre-index.php");
+            break;
+        case 's':
+            $_SESSION['user']='S';//sante
+            break;
+        case 't':
+             $_SESSION['user']='T'; //transgenre
+            break;
+        case 'p':
+             $_SESSION['user']='P'; //proche
+            break;
+        case 'a':
+             $_SESSION['user']='A'; //autre
+            break;
+        default:
+            $_SESSION['user']='A';
+            break;
+    }
+
+    if(isset($_SESSION['user']))
+    {
+        //recup ip la hasher puis la comparer avec full ip tab
+        $ip=mdpHash(getIp());
+        $db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+        $q = $db->prepare('SELECT * FROM `stat` WHERE ip = ?');
+        $q->execute(array($ip));
+        $rep=$q->fetchAll();
+        if(empty($rep))
+        {
+            $q = $db->prepare('INSERT INTO `stat` (`ip`, `status`) VALUES (?, ?);');
+            $q->execute(array($ip,$_SESSION['user']));
+        }
+        header("location: index.php");
+    }
+}
 ?>
 <html>
     <head>

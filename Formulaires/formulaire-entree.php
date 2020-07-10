@@ -6,14 +6,15 @@
             <h1>Association Transat</h1>
             </div>
             <div id="pre_index_div_form">
-                <form method="post">
+                <form method="post" action="pre-index.php">
                     <div class="form-group col-8">
                     <label for="inputState">Dites-nous qui vous êtes : </label>
-                    <select id="inputState" class="form-control">
-                        <option selected>-Vous êtes-</option>
-                        <option>Un professionnel de santé</option>
-                        <option>Une personne Trangenre</option>
-                        <option>une personne proche</option>
+                    <select id="inputState" class="form-control" name="user">
+                        <option value="stupide" selected>-Vous êtes-</option>
+                        <option value="s">Un professionnel de santé</option>
+                        <option value="t">Une personne Trangenre</option>
+                        <option value="p">une personne proche</option>
+                        <option value="a">autre où ne souhaite pas répondre</option>
                     </select>
                     </div>
                     <input type="submit" name="Valider" class="btn btn-primary button_valider"></input>
@@ -24,5 +25,5 @@
     </body>
     
     
-
+<!--!!rajouter explication formulaire!! -->
 </html>

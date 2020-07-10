@@ -107,6 +107,16 @@ function read($id,$tab)
 	$rep=$q->fetchAll();
 	return $rep;
 }
+ function getIp(){
+    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+      $ip = $_SERVER['HTTP_CLIENT_IP'];
+    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+      $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    }else{
+      $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    return $ip;
+  }
 //function auto
 function verifsession()
 {
@@ -114,10 +124,6 @@ function verifsession()
 	{
 		header("Location:pre-index.php");
 	}
-
-
-
-
 }
 verifsession();
 ?>
