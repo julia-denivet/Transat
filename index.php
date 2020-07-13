@@ -1,6 +1,8 @@
 <?php
 session_start();
 include('function.php');
+$artc=conseille($_SESSION['user'],'article');
+$resc=conseille($_SESSION['user'],'ressources');
 ?>
 <html>
 
@@ -79,7 +81,41 @@ include('function.php');
                                 </div>
                             </div>
                         </div>
-                        
+                        <div>
+                            <h1>Conseillé pour vous</h1>
+                            <h2>Articles</h2>
+                            <ul>
+                                <?php
+                                    foreach 
+                                        ($artc as $ic) 
+                                    {
+                                        ?>
+                                        <li>
+                                            <p><?=$ic['titre']?></p>
+                                            <p>Catégorie :<?=$ic['categorie']?></p>
+                                            <a href="article.php?id=<?=$ic['id']?>">Lire</a>
+                                        </li>
+                                        <?php   
+                                    }
+                                ?>
+                            </ul>
+                            <h2>Ressources</h2>
+                            <ul>
+                                 <?php
+                                    foreach 
+                                        ($resc as $ic) 
+                                    {
+                                        ?>
+                                        <li>
+                                            <p><?=$ic['titre']?></p>
+                                            <p>Catégorie :<?=$ic['categorie']?></p>
+                                            <a href="ressource.php?id=<?=$ic['id']?>">Lire</a>
+                                        </li>
+                                        <?php   
+                                    }
+                                ?>
+                            </ul>
+                        </div>
                        
             </div>    
                                 

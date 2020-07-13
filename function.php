@@ -117,6 +117,16 @@ function read($id,$tab)
     }
     return $ip;
   }
+  function conseille($user,$tab)
+  {
+  	$user="%".$user."%";
+  	$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+	$q = $db->prepare("SELECT * FROM ".$tab." WHERE type LIKE ? ORDER BY date DESC LIMIT 5;");
+	$q->execute(array($user));
+	//$q->debugDumpParams();
+	$rep=$q->fetchAll();
+	return $rep;
+  }
 //function auto
 function verifsession()
 {
