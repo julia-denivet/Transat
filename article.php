@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('function.php');
+$artc=conseille($_SESSION['user'],'article');
 ?>
 <html>
 
@@ -27,21 +28,58 @@ include('function.php');
            		else
            		{
            			//pas de page
-           			$p=page(0,4,'article');
-           			foreach ($p as $pl) 
+           			if(!isset($_GET['cat']))
            			{
+           				$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+						$q = $db->prepare("SELECT DISTINCT categorie FROM article");
+						$q->execute();
+						//$q->debugDumpParams();
+						$repcat=$q->fetchAll();
+						?>
+						<section>
+						<?php
+           				foreach ($repcat as $cat) 
+           				{
+           					?>
+           					<a href="article.php?cat=<?=$cat[0]?>"><?=$cat[0]?></a>
+           					<?php
+           					
+           				}
            				?>
-           				<a href="article.php?id=<?=$pl['id']?>">
-           					<div>
-           						<p><?=$pl['titre']?></p>
-           						<p><?=$pl['date']?></p>
-           						<p><?=$pl['categorie']?></p>
-           					</div>
-           				</a>
-           				<?php
-           			}
+           				</section>
+						<div><h3>Selectioner pour vous</h3><?php
+                                    foreach 
+                                        ($artc as $ic) 
+                                    {
+                                        ?>
+                                        <a href="article.php?id=<?=$ic['id']?>">
+           									<div>
+           										<p><?=$ic['titre']?></p>
+           										<p><?=$ic['date']?></p>
+           										<p><?=$ic['categorie']?></p>
+           									</div>
+           								</a>
+                                        <?php   
+                                    }
+  										?>
+  						</div>
+  						<?php
+						$p=page(0,4,'article');
+           				foreach ($p as $pl) 
+           				{
+           					?>
+           					<a href="article.php?id=<?=$pl['id']?>">
+           						<div>
+           							<p><?=$pl['titre']?></p>
+           							<p><?=$pl['date']?></p>
+           							<p><?=$pl['categorie']?></p>
+           						</div>
+           					</a>
+           					<?php
+           				}
 
            		
+           		}
            		}
            	}
            	else

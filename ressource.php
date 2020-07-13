@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('function.php');
+$resc=conseille($_SESSION['user'],'ressources');
 ?>
 <html>
 
@@ -27,9 +28,47 @@ include('function.php');
            		else
            		{
            			//pas de page
-           			$p=page(0,4,'ressources');
-           			foreach ($p as $pl) 
-           			{
+           			if(!isset($_GET['cat']))
+           			{	
+           				$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+						$q = $db->prepare("SELECT DISTINCT categorie FROM ressources");
+						$q->execute();
+						//$q->debugDumpParams();
+						$repcat=$q->fetchAll();
+						?>
+						<section>
+						<?php
+           				foreach ($repcat as $cat) 
+           				{
+           					?>
+           					<a href="ressource.php?cat=<?=$cat[0]?>"><?=$cat[0]?></a>
+           					<?php
+           					
+           				}
+           				?>
+           				</section>
+           				<div>
+           					<h3>Selectioner pour vous</h3>
+           					<?php
+                                    foreach 
+                                        ($resc as $ic) 
+                                    {
+                                        ?>
+                                        <a href="ressource.php?id=<?=$ic['id']?>">
+           									<div>
+           										<p><?=$ic['titre']?></p>
+           										<p><?=$ic['date']?></p>
+           										<p><?=$ic['categorie']?></p>
+           									</div>
+           								</a>
+                            			<?php   
+                                    }
+  							?>
+  						</div>
+  						<?php
+           				$p=page(0,4,'ressources');
+           				foreach ($p as $pl) 
+           				{
            				?>
            				<a href="ressource.php?id=<?=$pl['id']?>">
            					<div>
@@ -39,6 +78,7 @@ include('function.php');
            					</div>
            				</a>
            				<?php
+           				}
            			}
 
            		
