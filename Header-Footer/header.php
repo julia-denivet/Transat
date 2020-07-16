@@ -19,7 +19,7 @@
                 <section>
                     <article>
                         <input class="form-control mr-sm-2 " id="autotransat" type="search" onkeyup="autocompletiontransat('0')" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success color_search" type="submit">Recherche</button>
+                        <input class="btn btn-outline-success color_search" type="submit"></submit>
                     </article>
                     <article id="datatransat">
 

@@ -20,6 +20,6 @@ function autocompletiontransat(valeur)
 
         };
 
-        httpRequest.open("GET","option.php?srt="+vartext);
+        httpRequest.open("GET","autocompletiontransat.php?srt="+vartext);
         httpRequest.send();
 }
