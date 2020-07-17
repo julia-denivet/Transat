@@ -16,6 +16,7 @@ body
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-x: hidden;
     
 }
 
@@ -169,7 +170,6 @@ body
     
     width: 80vw;
     height: 60vh;
-    margin-left: 5px;
     margin-top: 10px;
 }
 
@@ -190,8 +190,8 @@ body
 {
     display: flex;
     flex-direction: column;
-    width: 400px;
-    height: 600px;
+    width: 25rem;
+    height: 37.5rem;
     background-color: #acc9e7;
     margin-left: 10px;
     margin-top: 10px;
@@ -209,6 +209,12 @@ body
 {
     display: flex;
     flex-direction: row;
+}
+
+#flex_planning_news_index
+{
+    display: flex;
+    flex-direction: column;
 }
 
 #img_flyer
@@ -240,6 +246,11 @@ body
 {
     display: flex;
     flex-direction: column;
+}
+
+.carousel-control-next
+{
+    margin-right: 15rem;
 }
 
 /*planning-index*/

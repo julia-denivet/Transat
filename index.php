@@ -21,84 +21,80 @@ $resc=conseille($_SESSION['user'],'ressources');
         <?php include('Header-Footer/header.php'); ?>
         <main class="container-fluid">
             <div class="index_flex">
-                
-                <div class="newletters_index">
+                <div id="flex_planning_news_index">
+                    <div class="newletters_index">
                         <div class="plan-index">
-                            <p>PLANNING</p>
+                            <p>AGENDA</p>
                             <div id="newsplan">
                                 <?php include('planning.php')?>
                             </div>
-                        </div>
+                        </div>   
                         <div class="entete">
-                            <p>NEWSLETTERS</p>
+                            <h1>NEWSLETTERS</h1>
+                            <h2>Conseillé pour vous</h2>
                             <div>
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                <h3>Articles</h3>
+                                <ul>
+                                    <?php
+                                        foreach 
+                                            ($artc as $ic) 
+                                        {
+                                    ?>
+                                            <li>
+                                                <p><?=$ic['titre']?></p>
+                                                <p>Catégorie :<?=$ic['categorie']?></p>
+                                                <a href="article.php?id=<?=$ic['id']?>">Lire</a>
+                                            </li>
+                                    <?php   
+                                        }
+                                    ?>
+                                </ul>
+                                <h3>Ressources</h3>
+                                <ul>
+                                    <?php
+                                        foreach 
+                                            ($resc as $ic) 
+                                        {
+                                    ?>
+                                            <li>
+                                                <p><?=$ic['titre']?></p>
+                                                <p>Catégorie :<?=$ic['categorie']?></p>
+                                                <a href="ressource.php?id=<?=$ic['id']?>">Lire</a>
+                                            </li>
+                                    <?php   
+                                        }
+                                    ?>
+                                </ul>
+
                             </div>
                         </div>
-                       
+                            
+                    </div>
                 </div>
-                        <div class="flyer_texte_index">
-                            <div class="carousel_flyer">
-                                    <div id="carouselExampleControls" class="carousel slide col-8" data-ride="carousel">
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                            <img class="img_carousel_index" src="Medias/Transat/img1.jpg" class="d-block w-100" alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                            <img class="img_carousel_index" src="Medias/Transat/img2.jpg" class="d-block w-100"  alt="...">
-                                            </div>
-                                            <div class="carousel-item">
-                                            <img class="img_carousel_index" src="Medias/Transat/img3.jpg" class="d-block w-100"  alt="...">
-                                            </div>
-                                        </div>
-                                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Previous</span>
-                                        </a>
-                                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="sr-only">Next</span>
-                                        </a>
-                                    </div>   
+                    <div id="carouselExampleControls" class="carousel slide col-8" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="img_carousel_index" src="Medias/Transat/img1.jpg" class="d-block w-100" alt="...">
                             </div>
+                            <div class="carousel-item">
+                                <img class="img_carousel_index" src="Medias/Transat/img2.jpg" class="d-block w-100"  alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="img_carousel_index" src="Medias/Transat/img3.jpg" class="d-block w-100"  alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>   
+                
                            
-                        </div>
-                        <div>
-                            <h1>Conseillé pour vous</h1>
-                            <h2>Articles</h2>
-                            <ul>
-                                <?php
-                                    foreach 
-                                        ($artc as $ic) 
-                                    {
-                                        ?>
-                                        <li>
-                                            <p><?=$ic['titre']?></p>
-                                            <p>Catégorie :<?=$ic['categorie']?></p>
-                                            <a href="article.php?id=<?=$ic['id']?>">Lire</a>
-                                        </li>
-                                        <?php   
-                                    }
-                                ?>
-                            </ul>
-                            <h2>Ressources</h2>
-                            <ul>
-                                 <?php
-                                    foreach 
-                                        ($resc as $ic) 
-                                    {
-                                        ?>
-                                        <li>
-                                            <p><?=$ic['titre']?></p>
-                                            <p>Catégorie :<?=$ic['categorie']?></p>
-                                            <a href="ressource.php?id=<?=$ic['id']?>">Lire</a>
-                                        </li>
-                                        <?php   
-                                    }
-                                ?>
-                            </ul>
-                        </div>
+                
                        
             </div>    
                                 
