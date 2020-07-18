@@ -24,10 +24,18 @@
 		$_POST['res']=addslashes($_POST['res']);
 		$sql="INSERT INTO `ressources` (`id`,`titre`,`id_admin`, `date`, `categorie`, `article`,`type`) VALUES (NULL,'".$_POST['titre']."', '".$_SESSION['admid']."', NOW(), '".$_POST['catres']."', '".$_POST['res']."','".$type."');";
 		$a=mysqli_query($linkbd,$sql);
-	}
-	var_dump($_POST);
+	    if(isset($_FILES['pdf']))
+        {
+            $sql="SELECT id FROM ressources WHERE article='".$_POST['res']."' AND titre='".$_POST['titre']."';";
+            $nom=mysqli_query($linkbd,$sql);
+            $nompdf=mysqli_fetch_all($nom)[0][0];
+            ajoures($nompdf);
+        }
+    }
+	
+    
 ?>
-<form method="post" action="admin.php?res&new">
+<form method="post" action="admin.php?res&new" enctype="multipart/form-data">
 	<label>titre</label><input type="text" name="titre">
 	<select name="catres">
 		<option>juridique</option>
@@ -62,7 +70,8 @@
 <div id="Editor" class="editor" contenteditable="true"></div>
 
     <input id="textzone" type="hidden"  name="res" value=''>
-
+    <label>Reçource(pdf)</label>
+    <input type="file" name="pdf" accept=".pdf">
     <input type="checkbox" name="S">
     <label>Santé</label>
     <input type="checkbox" name="T">

@@ -127,6 +127,35 @@ function read($id,$tab)
 	$rep=$q->fetchAll();
 	return $rep;
   }
+
+
+  function ajoures($id)
+{
+    $repertoireDestination = dirname(__FILE__)."/";
+    $nomDestination = "ressource/".$id.".pdf";
+
+    if (is_uploaded_file($_FILES["pdf"]["tmp_name"])) 
+    {
+    	if (rename($_FILES["pdf"]["tmp_name"],$repertoireDestination.$nomDestination)) 
+     	{
+        	//echo "Le fichier temporaire ".$_FILES["pdf"]["tmp_name"]." a été déplacé vers ".$repertoireDestination.$nomDestination."<a href=".$nomDestination.">test</a>";
+        	//oui
+     	} 
+     	else 
+     	{
+     	   //Le déplacement du fichier temporaire a échoué
+     	   //non
+     	}          
+    } 
+    else 
+    {
+        //Le fichier n'a pas été uploadé (trop gros ?)
+    }
+}
+
+
+
+
 //function auto
 function verifsession()
 {

@@ -70,8 +70,6 @@
     <label>Proche</label>
     <input type="checkbox" name="A">
     <label>Autre</label>
-
-
 	<input type="submit" name="newres">
 </form>
 <script type="text/javascript">
