@@ -53,86 +53,92 @@
 	echo "Semaine ".$sem;
 
 ?>
-<table>
-<tr>
-	<td></td>
-	<td><b>D</b><b class="pasindex">imanche</b></td>
-	<td><b>L</b><b class="pasindex">undi</b></td>
-	<td><b>M</b><b class="pasindex">ardi</b></td>
-	<td><b>M</b><b class="pasindex">ercredi</b></td>
-	<td><b>J</b><b class="pasindex">eudi</b></td>
-	<td><b>V</b><b class="pasindex">endredi</b></td>
-	<td><b>S</b><b class="pasindex">amedi</b></td>
-</tr>
-<?php
-for ($h=0; $h <24 ; $h++) 
-{ ?>
-	<tr>
-		<td class="planh pasindex"><?=$h?> h</td>
+<table class="planning_transat">
+	<thead>
+		<tr id="planning_header_jours">
+			<td></td>
+			<td><b>D</b><b class="pasindex">imanche</b></td>
+			<td><b>L</b><b class="pasindex">undi</b></td>
+			<td><b>M</b><b class="pasindex">ardi</b></td>
+			<td><b>M</b><b class="pasindex">ercredi</b></td>
+			<td><b>J</b><b class="pasindex">eudi</b></td>
+			<td><b>V</b><b class="pasindex">endredi</b></td>
+			<td><b>S</b><b class="pasindex">amedi</b></td>
+		</tr>
+	</thead>
+	<tbody>
 		<?php
-		for ($j=0; $j <7 ; $j++) 
+			for ($h=0; $h <24 ; $h++) 
 		{ 	?>
-			<td>
-			<div class="caseplan">
-
+		<tr>
+			<td class="planh pasindex"><?=$h?> h</td>
 			<?php
-			foreach ($rep as $r) 
-			{	
-				if($r['nsem']==$j&&$r['hdeb']<=$h&&$r['hfin']>$h)
-				{
-					if ($r['type']==1) 
-					{
-						$col="pink";
-						$type="mixte";
-					}
-					else
-					{
-						$col="cyan";
-						$type="non mixte";
-					}
-				?>
-				<div onclick="fichEv(this)" class="rdv" style="background-color:<?=$col?>;">
-					     <?=$r['titre']?>
-					     <div class="fich-ev" hidden=true>
-					     	<h1><?=$r['titre']?></h1>
-					     	<p>debut : <?=$r['hdeb']."h".$r['mdeb']?></p>
-					     	<p>fin : <?=$r['hfin']."h".$r['mfin']?></p>
-					     	<p>lieu : <?=$r['lieu']?></p>
-					     	<p>description : <?=$r['description']?></p>
-					     	<p>type : <?=$type?></p>
-					     	<button onclick="retfichEv(this)" class="ret-plan">Retour</button>
-					     	<?php
-					     	if(isset($_SESSION['admstat'])&&$_SESSION['admstat'] <= 1)
-					     	{
-					     		?>
-					     	<form method="post">
-					     		<button name="evsup" type="submit" value="<?=$r['id']?>">suprimer</button>
-					     	</form>
-					     		<?php
-					     	}
-					     	?>
-					     </div>
+			for ($j=0; $j <7 ; $j++) 
+			{ 	?>
+				<td>
+				<div class="caseplan">
 
+				<?php
+				foreach ($rep as $r) 
+				{	
+					if($r['nsem']==$j&&$r['hdeb']<=$h&&$r['hfin']>$h)
+					{
+						if ($r['type']==1) 
+						{
+							$col="pink";
+							$type="mixte";
+						}
+						else
+						{
+							$col="cyan";
+							$type="non mixte";
+						}
+					?>
+					<div onclick="fichEv(this)" class="rdv" style="background-color:<?=$col?>;">
+							<?=$r['titre']?>
+							<div class="fich-ev" hidden=true>
+								<h1><?=$r['titre']?></h1>
+								<p>debut : <?=$r['hdeb']."h".$r['mdeb']?></p>
+								<p>fin : <?=$r['hfin']."h".$r['mfin']?></p>
+								<p>lieu : <?=$r['lieu']?></p>
+								<p>description : <?=$r['description']?></p>
+								<p>type : <?=$type?></p>
+								<button onclick="retfichEv(this)" class="ret-plan">Retour</button>
+								<?php
+								if(isset($_SESSION['admstat'])&&$_SESSION['admstat'] <= 1)
+								{
+									?>
+								<form method="post">
+									<button name="evsup" type="submit" value="<?=$r['id']?>">supprimer</button>
+								</form>
+									<?php
+								}
+								?>
+							</div>
+
+					</div>
+					<?php
+					}
+				}
+				?>
+				</td>
 				</div>
 				<?php
-				}
+				
 			}
 			?>
-			</td>
-			</div>
-			<?php
-			
-		}
-		?>
-	</tr>
-	<?php
-}
-?>
+		</tr>
+		<?php
+	}
+	?>
+	</tbody>
+
+
 </table>
 
-<div id="planbutt">
-	<button id="butplanp" onclick="changplan(<?=$sem?>-1,<?=$ann?>)">précédent</button>
-	<button id="butplans" onclick="changplan(<?=$sem?>+1,<?=$ann?>)">suivant</button>
+<div id="planbutt" class="button_flex_planning">
+	<button id="butplanp" class="button_precedent" onclick="changplan(<?=$sem?>-1,<?=$ann?>)">précédent</button>
+	<button id="butplans" class="button_suivant" onclick="changplan(<?=$sem?>+1,<?=$ann?>)">suivant</button>
 </div>	
 
 

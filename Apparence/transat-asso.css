@@ -275,3 +275,83 @@ body
 {
 
 }
+
+#main_planning
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+table.planning_transat {
+    
+    
+    width: 400px;
+    text-align: center;
+    border-collapse: collapse;
+ 
+  }
+
+  table.planning_transat td, table.planning_transat th {
+    border: 1px solid #e5dcf1;
+    padding: 5px 10px;
+    
+    
+  }
+  table.planning_transat tbody td {
+    font-size: 15px;
+    font-weight: bold;
+    background: #acc9e7 ;
+    
+    
+  }
+
+  table.planning_tansat tbody.planh
+  {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    background: #e5dcf1;
+  }
+
+
+  table.planning_transat thead {
+    background: #e5dcf1;
+    border-bottom: 10px solid #e5dcf1;
+  }
+  table.planning_transat thead th {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: left;button_precedent
+    border-left: 2px solid #e5dcf1;
+  }
+  
+
+.button_flex_planning
+
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.button_precedent
+
+{
+ margin-top: 1rem;
+}
+
+.button_suivant
+
+{
+    margin-left: 5rem;
+    margin-top: 1rem;
+}
+
+
+
+
+  
+  

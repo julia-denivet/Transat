@@ -16,7 +16,7 @@ include('function.php');
 
     <body>
         <?php include('Header-Footer/header.php'); ?>
-        <main>
+        <main id="main_planning">
            <section id="plan">
                <?php
                     include('planning.php'); 
