@@ -21,6 +21,7 @@ $resc=conseille($_SESSION['user'],'ressources');
         <?php include('Header-Footer/header.php'); ?>
         <main class="container-fluid">
             <div class="index_flex">
+                
                 <div class="newletters_index">
                         <div class="plan-index">
                             <p>PLANNING</p>
@@ -61,25 +62,7 @@ $resc=conseille($_SESSION['user'],'ressources');
                                         </a>
                                     </div>   
                             </div>
-                            <div class="newletters_index">
-                                <div class="entete">
-                                    <p>PRESENTATION</p>
-                                    <div>
-                                        <p>
-                                            L'association <b>Transat</b> est une association de <b>personnes trans</b>, à visée militante et d'entraide, basée sur <b>Marseille</b> et ses environs. 
-                                        </p>
-                                        <p>
-                                            Aujourd'hui, le sujet de la transidentité est encore tres <b>méconnu du grand public.</b> Les personnes trans sont encore largement exposées au quotidien à des préjugés transphobes.
-                                        </p>
-                                        <p>
-                                            Par ailleurs, ces <b>préjugés</b> peuvent venir ralentir ou empêcher <b>des démarches de transition</b>(changer d'état civil, accéder à des traitements médicaux etc.), souvent <b>nécessaires</b> pour le bien-être des personnes.
-                                        </p>
-                                        <p>
-                                            Dans ce cadre, nos actions visent à <b>sensibiliser le public</b> à la question de la transidentité, et <b>apporter du soutien</b> aux personnes concerné.es, dans un objectif de <b>défense</b> de nos <b>droits</b> et de <b>lutte</b> contre la <b>transphobie</b>.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                         <div>
                             <h1>Conseillé pour vous</h1>
