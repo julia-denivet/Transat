@@ -335,6 +335,7 @@ table.planning_transat {
 {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .button_precedent
