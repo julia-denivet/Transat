@@ -160,40 +160,31 @@ body
 
 /*INDEX*/
 
-.img_carousel_index
-{
- width: 50vw;
- height: 60vh;
- border-radius: 20px;
-}
+.slideshow {
+    width: 350px;
+    height: 200px;
+    overflow: hidden;
+    border: 3px solid #F2F2F2;
+ }
+ 
+ .slideshow ul {
+     /* 4 images donc 4 x 100% */
+    width: 400%;
+    height: 200px;
+    padding:0; margin:0;
+    list-style: none;
+ }
+ .slideshow li {
+    float: left;
+ }
 
-#carouselExampleControls
-{
-    
-    width: 80vw;
-    height: 60vh;
-    margin-top: 10px;
-}
-
-.carousel-item
-{
-    width: 900px ;
-}
-
-.carousel_flyer
-{
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    height: 70vh;
-}
 
 .newletters_index
 {
     display: flex;
     flex-direction: column;
     width: 25rem;
-    height: 37.5rem;
+    height: 30rem;
     background-color: #acc9e7;
     margin-left: 10px;
     margin-top: 10px;
