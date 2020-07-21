@@ -325,9 +325,26 @@ table.planning_transat {
     font-size: 22px;
     font-weight: bold;
     color: #FFFFFF;
-    text-align: left;button_precedent
+    text-align: left;
     border-left: 2px solid #e5dcf1;
   }
+
+
+.fich-ev
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    border: solid black 2px;
+}
+
+.ret-plan
+{
+    background: #e5dcf1 ;
+    
+}
   
 
 .button_flex_planning
@@ -342,6 +359,8 @@ table.planning_transat {
 
 {
  margin-top: 1rem;
+ background: #acc9e7;
+
 }
 
 .button_suivant
@@ -349,6 +368,9 @@ table.planning_transat {
 {
     margin-left: 5rem;
     margin-top: 1rem;
+    background: #e5dcf1 ;
+    
+
 }
 
 
