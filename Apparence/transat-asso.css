@@ -51,7 +51,8 @@ body
 
 .p_asso_transat {
     vertical-align: middle;
-    font-size: 300%;
+    font-size: 450%;
+    font-family: 'Amatic SC', cursive;
 }
 
 .logo {
@@ -159,7 +160,11 @@ body
 }
 
 /*INDEX*/
-
+.container-fluid 
+{
+    padding: 0;
+    background-color: #e5e5e5;
+}
 .slideshow {
     width: 350px;
     height: 200px;
@@ -310,6 +315,8 @@ table.planning_transat {
     width: 1000px;
     text-align: center;
     border-collapse: collapse;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   =
  
   }
 
@@ -368,8 +375,9 @@ table.planning_transat {
     justify-content: center;
     align-items: center;
     margin-left: 3rem;
-    font-size: 5rem;
-    font-family: 'Lobster', cursive;
+    font-size: 7rem;
+    font-family: 'Amatic SC', cursive;
+
 
 }
 

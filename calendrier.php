@@ -5,6 +5,7 @@ include('function.php');
 <html>
 
     <head>
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="Apparence/transat-asso.css">
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@ include('function.php');
        
     </head>
 
-    <body>
+    <body class="container-fluid">
         <?php include('Header-Footer/header.php'); ?>
         <main id="main_planning">
            <section id="plan">
