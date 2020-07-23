@@ -90,7 +90,7 @@
 							{
 								if ($r['type']==1) 
 								{
-									$col="pink";
+									$col="whitesmoke";
 									$type="mixte";
 								}
 								else
