@@ -1,0 +1,45 @@
+body
+{
+	background: url(../Medias/Logos/logo.png);
+	background-size: 60% ;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+#coAdmin
+{
+	display: flex;
+	flex-direction: column;
+	background: 
+	linear-gradient(238deg, rgba(91, 207, 250, 0.24) 0%, rgba(245, 171, 185, 0.36) 34%, rgba(255, 255, 255, 0.79) 48%, rgba(255, 255, 255, 0.44) 62%, rgba(245, 171, 185, 0.5) 77%, rgba(91, 207, 250, 0.34) 100%);
+	padding: 1%;
+	box-shadow: 3px 3px 9px #464545ed;
+	font-family: 'Comic Neue', cursive;
+	font-size: 3vh;
+	align-items: center;
+	justify-content: space-around;
+	height: 40vh; 
+	color: #111010;
+}
+#coAdmin input
+{
+    font-size: 3vh;
+    font-family: 'Comic Neue', cursive;
+    background-color: #b1f0f05c;
+    border: none;
+    box-shadow: 1px 1px 5px #4f4f46cc;
+    color: rgba(4, 34, 44, 0.9);
+}
+#erradm
+{
+	font-size: 50%;
+	text-decoration: none;
+	color: #0f0c0c;
+	font-weight: inherit;
+}

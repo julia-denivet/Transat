@@ -16,7 +16,7 @@ function conexionAdmin($login,$mdp)//permet aux admin de se conecter
 	$rep=$q->fetch();
 	if(empty($rep))
 	{
-		$error="désolé mais vous ne sembler pas étre une persone concérnné";
+		$error="Si t'es admin verifie ton login, si tu l'es pas bouge de la !";
 
 		return $error;
 	}

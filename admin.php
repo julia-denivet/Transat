@@ -33,24 +33,27 @@ include('function.php');
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="Apparence/admin.css">
 	<title>Admin transat</title>
 </head>
 <body>
 <?php if(!isset($_SESSION['admid'])){ ?>
-<form method="post" action="admin.php">
-	<label>login</label>
+<form id="coAdmin" method="post" action="admin.php">
+	<label>Login :</label>
 	<input type="text" name="logAdmin">
-	<label>mots de passe</label>
-	<input type="pasword" name="passAdmin">
+	<label>Mot De Passe :</label>
+	<input type="password" name="passAdmin">
 	<input type="submit" name="subAdmin">
-</form>
-
-<?php
+	<?php
 	if(isset($error))
 	{
 		echo "<b id='erradm'>$error</b>";	
 	}
+	?>
+</form>
 
+<?php
+	
  }
 else
 {
