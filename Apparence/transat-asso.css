@@ -1,4 +1,6 @@
 
+
+
 body
 {
     font-family:'Comic Neue', cursive ;
@@ -16,6 +18,8 @@ body
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-x: hidden;
+    background-color: #e5e5e5;
     
 }
 
@@ -44,7 +48,8 @@ body
 
 .p_asso_transat {
     vertical-align: middle;
-    font-size: 300%;
+    font-size: 450%;
+    font-family: 'Amatic SC', cursive;
 }
 
 .logo {
@@ -113,11 +118,7 @@ body
     height: 50vh;
 }
 
-.entete {
-    
-    text-align: center;
-    height: 60vh;
-}
+
 
 
 /*PRE-INDEX*/
@@ -156,59 +157,104 @@ body
 }
 
 /*INDEX*/
-
-.img_carousel_index
+.container-fluid 
 {
- width: 50vw;
- height: 60vh;
- border-radius: 20px;
+    padding: 0;
+    background-color: #e5e5e5;
 }
-
-#carouselExampleControls
-{
-    
-    width: 80vw;
-    height: 60vh;
-    margin-left: 5px;
+.slideshow {
+    width: 70.5rem;
+    height: 58rem;
+    overflow: hidden;
+    border: 3px solid #F2F2F2;
+    align-items: center;
     margin-top: 10px;
-}
-
-.carousel-item
-{
-    width: 900px ;
-}
-
-.carousel_flyer
-{
-    display: flex;
-    flex-direction: column;
+    position:absolute;
     border-radius: 20px;
-    height: 70vh;
-}
+    left: 30%;
+    top: 27%;
+ 
+ }
+ 
+ .slideshow ul {
+     /* 4 images donc 4 x 100% */
+    width: 400%;
+    height: 200px;
+    padding:0; margin:0;
+    list-style: none;
+ }
+ .slideshow li {
+    float: left;
+ }
+
+ .img_slideshow
+ {
+     width: 70.5rem;
+     height: 60rem;
+ }
 
 .newletters_index
 {
     display: flex;
     flex-direction: column;
-    width: 400px;
-    height: 600px;
+    justify-content: space-between;
+    width: 25rem;
+    max-height: 60rem;
     background-color: #acc9e7;
     margin-left: 10px;
     margin-top: 10px;
     margin-bottom: 60px;
     border-radius: 20px;
-    text-shadow: ;
+    transition: box-shadow 1s ,transform 1s; 
+    
+    
 }
 
+#h1_acceuil_agenda
+{
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+
+}
+
+#h1_acceuil_newsletters
+{
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+}
+
+#h2_acceuil_conseille
+{
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+}
+}
 .newletters_index:hover
 {
     box-shadow: 2px 2px 10px black; 
 }
 
+.entete 
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+
 .index_flex
 {
     display: flex;
     flex-direction: row;
+}
+
+#flex_planning_news_index
+{
+    display: flex;
+    flex-direction: column;
 }
 
 #img_flyer
@@ -242,6 +288,11 @@ body
     flex-direction: column;
 }
 
+.carousel-control-next
+{
+    margin-right: 15rem;
+}
+
 /*planning-index*/
 #newsplan #planbutt
 {
@@ -264,3 +315,151 @@ body
 {
 
 }
+
+#main_planning
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+table.planning_transat {
+    
+    
+    width: 1000px;
+    text-align: center;
+    border-collapse: collapse;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+   =
+ 
+  }
+
+  table.planning_transat td, table.planning_transat th {
+    border: 1px solid #e5dcf1;
+    padding: 5px 10px;
+    
+    
+  }
+  table.planning_transat tbody td {
+    font-size: 15px;
+    font-weight: bold;
+    background: #acc9e7 ;
+    
+    
+  }
+
+  table.planning_tansat tbody.planh
+  {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    background: #e5dcf1;
+  }
+
+
+  table.planning_transat thead {
+    background: #e5dcf1;
+    border-bottom: 10px solid #e5dcf1;
+  }
+  table.planning_transat thead th {
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: left;
+    border-left: 2px solid #e5dcf1;
+  }
+
+.flex_calendrier_transat
+{
+    display: flex;
+    flex-direction: row;
+    margin-left: 4rem;
+}
+
+@media screen and (min-width: 200px) and (max-width: 640px) {
+    .flex_calendrier_transat {
+      display:flex;
+      flex-direction: column;
+    }
+  }
+
+.h1_calendrier_transat
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3rem;
+    font-size: 7rem;
+    font-family: 'Amatic SC', cursive;
+
+
+}
+
+
+
+.tableau_button_transat
+{
+    margin-top: 1rem;
+}
+
+.fich-ev
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    border: solid black 6px;
+}
+
+.rdv
+{
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+}
+
+.ret-plan
+{
+    background: #e5dcf1 ;
+    
+}
+  
+#annee_transat
+{
+    margin-right: 3rem;
+    
+}
+
+.button_flex_planning
+
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button_precedent
+
+{
+ margin-top: 1rem;
+ background: #acc9e7;
+
+}
+
+.button_suivant
+
+{
+    margin-left: 5rem;
+    margin-top: 1rem;
+    background: #e5dcf1 ;
+    
+
+}
+
+
+
+
+  
+  
