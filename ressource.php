@@ -92,6 +92,7 @@ $resc=conseille($_SESSION['user'],'ressources');
            			<h><?=$cont[0]['titre']?></h>
            			<section>
            				<?=$cont[0]['article']?>
+                  <a href="ressource/<?=$cont[0]['id']?>">lien vers le pdf</a>
            				<i><?=$cont[0]['date']?></i>
            				<p>catégorie : <a href=""><?=$cont[0]['categorie']?></a></p>
            			</section>

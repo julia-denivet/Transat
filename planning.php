@@ -110,7 +110,7 @@
 										<p>type : <?=$type?></p>
 										<button onclick="retfichEv(this)" class="ret-plan btn">Retour</button>
 										<?php
-										if(isset($_SESSION['admstat'])&&$_SESSION['admstat'] <= 1)
+										if(isset($_SESSION['admstat'])&&$_SESSION['admstat'] <= 1&&isset($_GET['plan']))
 										{
 											?>
 										<form method="post">

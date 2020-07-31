@@ -1,6 +1,6 @@
 $(function(){
     setInterval(function(){ //On vérifie que la fonctin est bien chargé prends en paramètre une fonction anonyme et le délai en millisecondes 
-       $(".slideshow ul").animate({marginLeft:-350},800,function()
+       $(".slideshow ul").animate({marginLeft:-1145},800,function()
        {
           $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first")); //je selectionne l'element ul je deplace l'element avec une animation vers la gauche avec une marge négative en 0,8s et je vais y recuperer mes elements li find() retourne aun objet jQuery puis je leur met un style particulier 
        })

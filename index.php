@@ -41,7 +41,7 @@ $resc=conseille($_SESSION['user'],'ressources');
                                 </div>
                                 <div class="entete">
                                     <h3>Articles</h3>
-                                    <ul>
+                                    <ul class="ulent">
                                         <?php
                                             foreach 
                                                 ($artc as $ic) 
@@ -49,7 +49,7 @@ $resc=conseille($_SESSION['user'],'ressources');
                                         ?>
                                                 <li>
                                                     <p><?=$ic['titre']?></p>
-                                                    <p>Catégorie :<?=$ic['categorie']?></p>
+                                                    <p>Catégorie : <?=$ic['categorie']?></p>
                                                     <a href="article.php?id=<?=$ic['id']?>">Lire</a>
                                                 </li>
                                         <?php   
@@ -57,7 +57,7 @@ $resc=conseille($_SESSION['user'],'ressources');
                                         ?>
                                     </ul>
                                     <h3>Ressources</h3>
-                                    <ul>
+                                    <ul class="ulent">
                                         <?php
                                             foreach 
                                                 ($resc as $ic) 
@@ -65,7 +65,7 @@ $resc=conseille($_SESSION['user'],'ressources');
                                         ?>
                                                 <li>
                                                     <p><?=$ic['titre']?></p>
-                                                    <p>Catégorie :<?=$ic['categorie']?></p>
+                                                    <p>Catégorie : <?=$ic['categorie']?></p>
                                                     <a href="ressource.php?id=<?=$ic['id']?>">Lire</a>
                                                 </li>
                                         <?php   
@@ -78,13 +78,15 @@ $resc=conseille($_SESSION['user'],'ressources');
                         </div>     
                     </div>
                 </div>
-                <div class="slideshow">
+                <div id="contSlid">                <div class="slideshow">
                     <ul>
                         <li><img class="img_slideshow" src="Medias/Transat/img1.jpg" alt="" /></li>
 	                    <li><img class="img_slideshow" src="Medias/Transat/img2.jpg" alt=""  /></li>
 	                    <li><img class="img_slideshow" src="Medias/Transat/img3.jpg" alt="" /></li>
                     </ul>
                 </div>
+                </div>
+
 
 
 
