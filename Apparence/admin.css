@@ -1,5 +1,15 @@
 body
 {
+	margin: 0;
+	padding: 0;
+	background: url(../Medias/Logos/logo.png);
+	background-size: 60% ;
+	background-repeat: no-repeat;
+	width: 100vw;
+	height: 100vh;
+}
+#bco
+{
 	background: url(../Medias/Logos/logo.png);
 	background-size: 60% ;
 	background-repeat: no-repeat;
@@ -42,4 +52,22 @@ body
 	text-decoration: none;
 	color: #0f0c0c;
 	font-weight: inherit;
+}
+#headAdmin
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;	
+	background:url(../Medias/Logos/drap.png);
+	background-size: 100% 100%;
+	height: 8vh;
+	border-bottom: 1px solid black;
+	font-family: 'Comic Neue', cursive;
+	
+}
+#headAdmin a
+{
+	text-decoration: none;
+	text-transform: capitalize;
 }

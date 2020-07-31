@@ -36,7 +36,7 @@ include('function.php');
 	<link rel="stylesheet" type="text/css" href="Apparence/admin.css">
 	<title>Admin transat</title>
 </head>
-<body>
+<body<?php if(!isset($_SESSION['admid'])){?> id="bco" <?php } ?> >
 <?php if(!isset($_SESSION['admid'])){ ?>
 <form id="coAdmin" method="post" action="admin.php">
 	<label>Login :</label>
@@ -58,11 +58,11 @@ include('function.php');
 else
 {
 	if(empty($_GET))
-		{	//menu de base
+		{	
 			?>
-			
-				<a href="admin.php?deco">deconexion</a>
-				<a href="admin.php?modpas">modifier mot de passe</a>
+			<header id="headAdmin">
+				<a href="admin.php?deco">Deconnexion</a>
+				<a href="admin.php?modpas">Modifier mot de passe</a>
 			
 			<?php
 			if($_SESSION['admstat']==0)
@@ -76,7 +76,7 @@ else
 			{
 				?>
 				<!-- lee admin sup-->
-				<a href="admin.php?res">Reçource</a>
+				<a href="admin.php?res">Ressource</a>
 				<a href="admin.php?art">Article</a>
 				<!-- lee admin sup-->
 				<?php
@@ -84,6 +84,7 @@ else
 			?>
 			
 			<a href="admin.php?videdres">Vide dressing</a>
+		</header>
 			<?php
 		}
 		if(isset($_GET['modpas']))
@@ -98,10 +99,11 @@ else
 	
 		
 		<?php if(isset($_GET['users'])&&$_SESSION['admstat']==0){ ?>
-		
-		<a href="admin.php?users&new">Ajouter Un nouvelle utilisateur</a>
-		<a href="admin.php?users&sup">Suprimer Utilisateur</a>
-		<a href="admin.php">retour</a>
+		<header id="headAdmin">
+			<a href="admin.php?users&new">Ajouter Un nouvelle utilisateur</a>
+			<a href="admin.php?users&sup">Suprimer Utilisateur</a>
+			<a href="admin.php">Retour</a>
+		</header>
 		<!--GESTION UTILISATEUR-->
 		<?php 
 			if(isset($_GET['new']))
@@ -123,10 +125,12 @@ else
 		if(isset($_GET['res'])&&$_SESSION['admstat']<2)
 		{ 
 		?>
-		<a href="admin.php?res&new">nouvelle reçource</a>
-		<a href="admin.php?res&mod">modifier reçource</a>
-		<a href="admin.php?res&sup">supprimer reçource</a>
-		<a href="admin.php">retour</a>
+		<header id="headAdmin">
+			<a href="admin.php?res&new">Nouvelle reçource</a>
+			<a href="admin.php?res&mod">Modifier reçource</a>
+			<a href="admin.php?res&sup">Supprimer reçource</a>
+			<a href="admin.php">Retour</a>
+		</header>
 		<?php 
 			if(isset($_GET['new']))
 			{				
@@ -147,10 +151,12 @@ else
 	
 		<!--GESTION  ARTICLE -->
 		<?php if(isset($_GET['art'])){ ?>
-		<a href="admin.php?art&new">nouvel article</a>
-		<a href="admin.php?art&mod">modifier article</a>
-		<a href="admin.php?art&sup">supprimer article</a>
-		<a href="admin.php">retour</a>
+		<header id="headAdmin">
+			<a href="admin.php?art&new">Nouvel article</a>
+			<a href="admin.php?art&mod">Modifier article</a>
+			<a href="admin.php?art&sup">Supprimer article</a>
+			<a href="admin.php">Retour</a>
+		</header>
 		<?php 
 			if(isset($_GET['new']))
 			{
@@ -170,11 +176,14 @@ else
 		<?php } ?>
 		<!--GESTION  ARTICLE -->
 	
-	
+		
 
 		<?php
 			if (isset($_GET['plan'])) 
-			{	?><a href="admin.php">retour</a>
+			{	?>
+				<header id="headAdmin">
+					<a href="admin.php">Retour</a>
+				</header>
 				<?php
 				include('admin/planadm.php');
 			}

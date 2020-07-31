@@ -1,4 +1,4 @@
-<a href="admin.php">retour</a>
+<header id="headAdmin"><a href="admin.php">retour</a></header>
 <?php if(!isset($_POST['mdpmod'])){?>
 <form method="post" action="admin.php?modpas">
 	<label>Ancien mot de passe </label><input type="password" name="oldmdp">
