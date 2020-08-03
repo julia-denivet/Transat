@@ -458,7 +458,107 @@ table.planning_transat {
 
 }
 
+#contact
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width: 100vw;
+    height: 85vh;
+    
+   
+}
 
+#contact_section_blanc:hover
+{
+    box-shadow: 2px 2px 10px black;
+    transform: scale(1.01);
+}
+
+#contact_section_blanc{
+    background-color: #acc9e7;
+    width: 50%;
+    text-align: center;
+    padding: 20px 10px;
+    box-shadow: 0 0 10px #3E3E3E;
+    transition: box-shadow 1s ,transform 1s;
+}
+
+#contact fieldset{
+  
+    margin: 10px;
+    width: 90%;
+    
+}
+
+#contact legend{
+    font-size: 2vw;
+    font-family: Robota;
+    color: #FFFFFF;
+}
+
+#contact #contact_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+}
+
+#contact ::placeholder{
+    color: #FFFFFF;
+}
+
+#contact input[type=text], textarea{
+    border: 0;
+    padding: 10px;
+    width: 90%;
+    margin: 10px 0;
+    font-size: 18px;
+    color: black;
+    background-color: #e5dcf1;
+    font-family: GeosansLight;
+}
+
+#contact textarea{
+    height: 15vh;
+}
+
+#contact select 
+
+{
+    border: 0;
+    padding: 10px;
+    width: 90%;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #FFFFFF;
+    background-color: #e5dcf1;
+    font-family: GeosansLight;
+}
+
+
+
+#contact .message_contact{
+    font-size: 20px;
+    color: #FFFFFF;
+    font-family: GeosansLight;
+}
+
+#contact .button_valider
+
+{
+    padding: 10px;
+	background-color: #e5dcf1;
+	font-size: 20px;
+	width: 90%;
+	margin: 10px 0;
+	color: #FFFFFF;
+	font-family: GeosansLight;
+	cursor: pointer;
+	border: 0;
+}
 
 
   
