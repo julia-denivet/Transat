@@ -147,7 +147,7 @@
 		
 			<button id="butplans" class="button_suivant btn" onclick="changplan(<?=$sem?>+1,<?=$ann?>)">suivant</button>
 			
-	</div>	
+		</div>	
 	</div>
 	
 	<?php echo "<h1 class='h1_calendrier_transat pasindex'>Semaine ".$sem."<h1>"; ?>
@@ -164,7 +164,7 @@
   			{
       			document.getElementById("plan").innerHTML = this.responseText;
   			};
-  			httpRequest.open("GET","planning.php?i="+i+"&ann="+ann);
+  			httpRequest.open("GET","planning.php?i="+i+"&ann="+ann); //j'envoie en GET  à la page planning l'année et la semaine que je souhaite affiche 
   			httpRequest.send();
 	}
 	function fichEv(elmnt)
