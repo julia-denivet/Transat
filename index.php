@@ -3,6 +3,7 @@ session_start();
 include('function.php');
 $artc=conseille($_SESSION['user'],'article');
 $resc=conseille($_SESSION['user'],'ressources');
+//var_dump($_SESSION['user'])
 ?>
 <html>
 

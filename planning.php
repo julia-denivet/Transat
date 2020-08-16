@@ -61,7 +61,7 @@
 		<table class="planning_transat">
 			<thead>
 				<tr id="planning_header_jours">
-					<td></td>
+					<td class="pasindex"></td>
 					<td><b>D</b><b class="pasindex">imanche</b></td>
 					<td><b>L</b><b class="pasindex">undi</b></td>
 					<td><b>M</b><b class="pasindex">ardi</b></td>
