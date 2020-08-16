@@ -12,7 +12,7 @@
                     <select id="inputState" class="form-control" name="user">
                         <option value="stupide" selected>-Vous êtes-</option>
                         <option value="s">Un professionnel de santé</option>
-                        <option value="t">Une personne Trangenre</option>
+                        <option value="t">Une personne Trangenre/Non binaire/En Questionement</option>
                         <option value="p">une personne proche</option>
                         <option value="a">autre où ne souhaite pas répondre</option>
                     </select>
