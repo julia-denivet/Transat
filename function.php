@@ -72,12 +72,21 @@ function changmdp($oldmdp,$newmdp,$confmdp,$iduser)
 	var_dump($rep);
 
 }
-function newplan($title,$date,$hdeb,$mdeb,$hfin,$mfin,$lieu,$desc,$type)
+function newplan($title,$date,$hdeb,$mdeb,$hfin,$mfin,$lieu,$desc,$type,$cat)
 {
-	$sql="INSERT INTO `agenda` ( `id_admin`, `date`, `description`, `titre`, `hdeb`, `mdeb`, `hfin`, `mfin`, `lieu`,`type`) VALUES (?,?,?,?,?,?,?,?,?,?);";
+	$sql="INSERT INTO `agenda` ( `id_admin`, `date`, `description`, `titre`, `hdeb`, `mdeb`, `hfin`, `mfin`, `lieu`,`type`,`cat`) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
 	$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
 	$q = $db->prepare($sql);
-	$q->execute(array($_SESSION['admid'],$date,$desc,$title,$hdeb,$mdeb,$hfin,$mfin,$lieu,$type));
+	$q->execute(array($_SESSION['admid'],$date,$desc,$title,$hdeb,$mdeb,$hfin,$mfin,$lieu,$type,$cat));
+}
+function cat()
+{
+	$sql="SELECT `cat` FROM `agenda` GROUP BY cat";
+	$db= new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+	$q = $db->prepare($sql);
+	$q->execute();
+	$rep=$q->fetchAll();
+	return $rep;
 }
 function supplan($id)
 {

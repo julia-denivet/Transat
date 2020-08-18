@@ -1,7 +1,7 @@
 <?php
 	if(isset($_POST['newplan']))
 	{
-		newplan($_POST['nom'],$_POST['date'],$_POST['hdeb'],$_POST['mdeb'],$_POST['hfin'],$_POST['mfin'],$_POST['lieu'],$_POST['desc'],$_POST['type']);
+		newplan($_POST['nom'],$_POST['date'],$_POST['hdeb'],$_POST['mdeb'],$_POST['hfin'],$_POST['mfin'],$_POST['lieu'],$_POST['desc'],$_POST['type'],$_POST['cat']);
 	}
 	if(isset($_POST['evsup']))
 	{
@@ -21,6 +21,29 @@
 		<option value="1">mixte</option>
 		<option value="0">non-mixte</option>
 	</select>
+	<label>catégorie</label>
+	<div >
+		<?php
+			$cat=cat();
+			foreach ($cat as $cc) 
+			{
+				?>
+					<li onclick="choix('<?=$cc[0]?>')" ><img class="imgliadm" src="https://i.pinimg.com/originals/50/b6/dd/50b6ddbf07843d9efc0fa71a63fabe09.png"><?=$cc[0]?></li>
+				<?php
+			}
+		?>
+	</div>
+	<select hidden id="selectcat" name="cat">
+		<?php
+			$cat=cat();
+			foreach ($cat as $cc) 
+			{
+				?>
+					<option value='<?=$cc[0]?>'></option>
+				<?php
+			}
+		?>
+	</select>
 	<input type="submit" name="newplan">
 </form>
 <section id="plan">
@@ -29,3 +52,16 @@
 	//gestion des page
 ?>	
 </section>
+<script type="text/javascript">
+	function choix(c) 
+	{
+		p=document.getElementById("selectcat");
+		for (var i = p.length - 1; i >= 0; i--) 
+		{
+			if(p[i].value==c)
+			{
+				p[i].selected = 'selected';
+			}
+		}
+	}
+</script>
