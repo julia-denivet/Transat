@@ -1,53 +1,44 @@
 <?php
 	$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
-	if(!isset($_GET['ann']))
+	if(!isset($_GET['moi'])||!isset($_GET['ann']))
 	{
-			$ann=date('Y');
+		$ann=date("Y");
+		$moi=date("n");
+		$moii=date("m");
 	}
 	else
 	{
 		$ann=$_GET['ann'];
-	}
-	if(isset($_GET['i']))
-	{
-		//$ann=date('Y');
-		$sem=$_GET['i'];
-		
-			
-	}
-	else
-	{
-		$sem=date('W')-1;		
-	}
-	if($sem==0 || $sem==53)
-	{
-
-		if($sem==0)
-		{
-			$sem=52;/*premiere semaine = 52 */
-			$ann--;
-			//$q = $db->prepare("SELECT * ,DATE_FORMAT(date, '%w') as 'nsem' FROM `agenda` WHERE DATE_FORMAT(date,'%V')= ".$sem." AND (DATE_FORMAT(date,'%Y')= ".$ann." OR (DATE_FORMAT(date,'%Y')= ".($ann+1).");");
-			$q = $db->prepare("SELECT * ,DATE_FORMAT(date, '%w') as 'nsem' FROM `agenda` WHERE DATE_FORMAT(date,'%V')= ".$sem." AND DATE_FORMAT(date,'%Y')= ".$ann.";");
+		$moi=$_GET['moi'];
+		switch ($moi) {
+			case 0:
+				$moi=12;
+				$ann--;
+				break;
+			case 13:
+				$moi=1;
+				$ann++;
+				break;
+			default:
+				$ann=$_GET['ann'];
+				$moi=$_GET['moi'];
+				break;
 		}
-		if($sem==53)
+		$moii=$moi;
+		if(strlen($moii)==1) 
 		{
-			$sem=1;
-			$ann++;
-			//$q = $db->prepare("SELECT * ,DATE_FORMAT(date, '%w') as 'nsem' FROM `agenda` WHERE DATE_FORMAT(date,'%V')= ".$sem." AND DATE_FORMAT(date,'%Y')= ".$ann.";");
-			$q = $db->prepare("SELECT * ,DATE_FORMAT(date, '%w') as 'nsem' FROM `agenda` WHERE DATE_FORMAT(date,'%V')= ".$sem." AND DATE_FORMAT(date,'%Y')= ".$ann.";");
+			$moii="0".$moii;
 		}
-		
-	}
-	else
-	{
-		$q = $db->prepare("SELECT * ,DATE_FORMAT(date, '%w') as 'nsem' FROM `agenda` WHERE DATE_FORMAT(date,'%V')= ".$sem." AND DATE_FORMAT(date,'%Y')= ".$ann.";");
-	}
-
+		//var_dump($moii);
+	} 
+	$q = $db->prepare("SELECT * ,DATE_FORMAT(date,'%e') as jr FROM `agenda` WHERE DATE_FORMAT(date,'%m') = ".$moi." AND DATE_FORMAT(date,'%Y') = ".$ann.";");
 	//var_dump($q);
 	//var_dump($ann,$sem);
-	
-	
-
+	$jourdepart=date('w',strtotime($ann."-".$moii."-01"));
+	setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
+	$nommoi=(strftime("%B",strtotime($ann."-".$moii."-01"))); 
+	if($jourdepart==0){$jourdepart=7;}
+	//var_dump($jourdepart);
 ?>
 
 <div class="flex_calendrier_transat">
@@ -56,37 +47,61 @@
 	 $q->execute();
 	 //var_dump($q);
 	 $rep=$q->fetchAll();
-	 //var_dump($rep); ?>
+	//var_dump($rep); ?>
 	<div class="tableau_button_transat">
 		<table class="planning_transat">
 			<thead>
 				<tr id="planning_header_jours">
-					<td class="pasindex"></td>
-					<td><b>D</b><b class="pasindex">imanche</b></td>
 					<td><b>L</b><b class="pasindex">undi</b></td>
 					<td><b>M</b><b class="pasindex">ardi</b></td>
 					<td><b>M</b><b class="pasindex">ercredi</b></td>
 					<td><b>J</b><b class="pasindex">eudi</b></td>
 					<td><b>V</b><b class="pasindex">endredi</b></td>
 					<td><b>S</b><b class="pasindex">amedi</b></td>
+					<td><b>D</b><b class="pasindex">imanche</b></td>
 				</tr>
 			</thead>
 			<tbody>
 				<?php
-					for ($h=0; $h <24 ; $h++) 
+					$testmoi=false;
+					$end=false;
+					for ($h=0; $h <6 ; $h++) 
 				{ 	?>
 				<tr>
-					<td class="planh pasindex"><?=$h?> h</td>
-					<?php
-					for ($j=0; $j <7 ; $j++) 
-					{ 	?>
+				<?php
+					for ($j=1; $j <8 ; $j++) 
+					{ 	
+
+						if($jourdepart==$j&&$testmoi===false)
+						{
+							$testmoi=true;
+							
+							$numjour=1;
+						}
+
+						?>
 						<td>
 						<div class="caseplan">
+						<?php 
+							if($testmoi===true)
+							{
+								?>
+									<p><?=$numjour?></p>
+								<?php
+								$numjour++;
+								if(!checkdate($moi,$numjour,$ann))
+								{
+									$testmoi=false;
+									$end=true;
+								}
+							}
+						?>
 
 						<?php
+						//var_dump($testmoi);
 						foreach ($rep as $r) 
 						{	
-							if($r['nsem']==$j&&$r['hdeb']<=$h&&$r['hfin']>$h)
+							if(isset($numjour)&&$r['jr']==($numjour-1))
 							{
 								if ($r['type']==1) 
 								{
@@ -127,6 +142,7 @@
 						}
 						?>
 						</td>
+						<?php if($end===true){break;} ?>
 						</div>
 						<?php
 						
@@ -134,6 +150,7 @@
 					?>
 				</tr>
 				<?php
+				if($end===true){break;}
 			}
 			?>
 			</tbody>
@@ -142,15 +159,15 @@
 		</table>
 		<div id="planbutt" class="button_flex_planning">
 		
-			<button id="butplanp" class="button_precedent btn" onclick="changplan(<?=$sem?>-1,<?=$ann?>)">précédent</button>
+			<button id="butplanp" class="button_precedent btn" onclick="changplan(<?=$moi-1?>,<?=$ann?>)">précédent</button>
 		
 		
-			<button id="butplans" class="button_suivant btn" onclick="changplan(<?=$sem?>+1,<?=$ann?>)">suivant</button>
+			<button id="butplans" class="button_suivant btn" onclick="changplan(<?=$moi+1?>,<?=$ann?>)">suivant</button>
 			
 	</div>	
 	</div>
 	
-	<?php echo "<h1 class='h1_calendrier_transat pasindex'>Semaine ".$sem."<h1>"; ?>
+	<h1 class='h1_calendrier_transat pasindex'><?=$nommoi?><h1>
 
 </div>
 
@@ -164,7 +181,7 @@
   			{
       			document.getElementById("plan").innerHTML = this.responseText;
   			};
-  			httpRequest.open("GET","planning.php?i="+i+"&ann="+ann);
+  			httpRequest.open("GET","planning.php?moi="+i+"&ann="+ann);
   			httpRequest.send();
 	}
 	function fichEv(elmnt)
