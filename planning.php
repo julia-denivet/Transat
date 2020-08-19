@@ -115,6 +115,7 @@
 								}
 							?>
 							<div onclick="fichEv(this)" class="rdv" style="background:<?=$col?>; border-radius:5px;">
+									<img class="type-ev" src="Medias/Logos/<?=$r['cat']?>.png">
 									<?=$r['titre']?>
 									<div class="fich-ev" hidden=true>
 										<h1><?=$r['titre']?></h1>
