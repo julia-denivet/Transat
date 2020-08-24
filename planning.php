@@ -80,7 +80,7 @@
 						}
 
 						?>
-						<td>
+						<td class="cel-cal">
 						<div class="caseplan">
 						<?php 
 							if($testmoi===true)
@@ -116,7 +116,7 @@
 							?>
 							<div onclick="fichEv(this)" class="rdv" style="background:<?=$col?>; border-radius:5px;">
 									<img class="type-ev" src="Medias/Logos/<?=$r['cat']?>.png">
-									<?=$r['titre']?>
+									<p><?=$r['titre']?></p>
 									<div class="fich-ev" hidden=true>
 										<h1><?=$r['titre']?></h1>
 										<p>debut : <?=$r['hdeb']."h".$r['mdeb']?></p>
@@ -168,7 +168,7 @@
 	</div>	
 	</div>
 	
-	<h1 class='h1_calendrier_transat pasindex'><?=$nommoi?><h1>
+	<h1 class='h1_calendrier_transat pasindex'><?=$nommoi?></h1>
 
 </div>
 
@@ -186,8 +186,9 @@
   			httpRequest.send();
 	}
 	function fichEv(elmnt)
-	{
-		ress=elmnt.children[0];
+	{	console.log('test');
+		ress=elmnt.children[2];
+		console.log(ress);
 		ress.hidden=false;
 	}
 	function retfichEv(elmnt)

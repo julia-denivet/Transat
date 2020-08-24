@@ -28,7 +28,7 @@
 			foreach ($cat as $cc) 
 			{
 				?>
-					<li onclick="choix('<?=$cc[0]?>')" ><img class="imgliadm" src="Medias/Logos/<?=$cc[0]?>.png"><?=$cc[0]?></li>
+					<li class="catplanadm" onclick="choix('<?=$cc[0]?>')" ><img class="imgliadm" src="Medias/Logos/<?=$cc[0]?>.png"><?=$cc[0]?></li>
 				<?php
 			}
 		?>

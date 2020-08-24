@@ -324,16 +324,14 @@ body
 }
 #newsplan table
 {
-    width: 100%;
 }
 #newsplan tr
 {
-    display: flex;
-    justify-content: space-between;
+    
 }
 #newsplan td
 {
-
+    
 }
 
 #main_planning
@@ -343,22 +341,21 @@ body
     align-items: center;
 }
 
-
-
+.type-ev
+{
+    width: 20%;
+}
 table.planning_transat {
-    
-    
-    width: 1000px;
     text-align: center;
     border-collapse: collapse;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
-   =
+    width: 100%;
+   
  
   }
 
   table.planning_transat td, table.planning_transat th {
     border: 1px solid #e5dcf1;
-    padding: 5px 10px;
     
     
   }
@@ -391,11 +388,36 @@ table.planning_transat {
     border-left: 2px solid #e5dcf1;
   }
 
+#plan
+{
+    width:100%;
+}
+.caseplan
+{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.caseplan > p
+{
+  
+}
+.rdv
+{
+   
+}
+.cel-cal
+{
+    width: 8vw;
+    height: 10vh;
+}
 .flex_calendrier_transat
 {
     display: flex;
     flex-direction: row;
-    margin-left: 4rem;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
 }
 
 @media screen and (min-width: 200px) and (max-width: 640px) {
@@ -407,14 +429,7 @@ table.planning_transat {
 
 .h1_calendrier_transat
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 3rem;
-    font-size: 7rem;
     font-family: 'Amatic SC', cursive;
-
-
 }
 
 
@@ -434,14 +449,17 @@ table.planning_transat {
     border: solid black 6px;
     z-index: 1000;
 }
-}
+
 
 .rdv
 {
     font-family: 'Amatic SC', cursive;
     font-size: 25px;
 }
-
+.rdv>p
+{
+    margin: 0;
+}
 .ret-plan
 {
     background: #e5dcf1 ;
@@ -450,9 +468,9 @@ table.planning_transat {
   
 #annee_transat
 {
-    margin-right: 3rem;
     
 }
+
 
 .button_flex_planning
 

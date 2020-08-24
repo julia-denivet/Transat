@@ -76,3 +76,12 @@ body
 {
 	width: 50px;
 }
+
+.catplanadm
+{
+
+}
+.catplanadm:hover
+{
+	background-color: red;
+}

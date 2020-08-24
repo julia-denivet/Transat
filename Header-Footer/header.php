@@ -10,7 +10,7 @@
 <header class="header">
     <nav class="nav_header">
         <a class="a_header"  href="index.php">Présentation Générale</a>
-        <a class="a_header" href="calendrier.php">Calendrier</a>        
+        <a class="a_header" href="calendrier.php">Agenda</a>        
         <a class="a_header" href="ressource.php">Nos Ressources</a>
         <a class="a_header" href="article.php">Blog</a>
         <a class="a_header" href="contact.php">Contact</a>
