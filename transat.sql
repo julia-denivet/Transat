@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 13 juil. 2020 à 11:31
+-- Généré le :  lun. 24 août 2020 à 18:46
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -69,57 +69,19 @@ CREATE TABLE IF NOT EXISTS `agenda` (
   `mfin` int(11) NOT NULL,
   `lieu` varchar(255) NOT NULL,
   `type` int(11) NOT NULL,
+  `cat` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `agenda`
 --
 
-INSERT INTO `agenda` (`id`, `id_admin`, `date`, `description`, `titre`, `hdeb`, `mdeb`, `hfin`, `mfin`, `lieu`, `type`) VALUES
-(21, 10, '2020-06-08', 'rr', 'lll', 15, 0, 14, 0, 'f', 0),
-(19, 10, '2020-06-08', 'thrfhrfyhr', 'lundi', 10, 0, 5, 0, 'ggggggggg', 0),
-(20, 10, '2020-06-08', 'kkkkkk', 'j', 14, 15, 19, 0, 'l', 0),
-(18, 10, '2020-06-09', 'jjjjj', 'mardi', 1, 0, 3, 0, 'lk', 0),
-(17, 10, '2020-06-09', 'jjjjj', 'mardi', 1, 0, 3, 0, 'lk', 0),
-(16, 10, '2020-06-09', 'jjjjjjjjjj', 'mardi', 1, 0, 0, 0, '', 0),
-(14, 10, '2020-06-07', 'w', 'bis', 9, 0, 12, 0, 'vvvvv', 0),
-(13, 10, '2020-06-07', 'dddddddddddd', 'dimanch', 8, 0, 10, 0, 'ff', 0),
-(15, 10, '2020-06-16', 'eeeeeee', 'mardi', 4, 15, 7, 0, 'rrrrrrr', 0),
-(22, 10, '2020-06-09', 'khhhhhhhhhhhhjjjjyyff', 'ppp', 1, 0, 6, 0, 'uuuuu', 0),
-(23, 10, '2020-06-13', 'kjnj', 'samdi', 1, 0, 4, 0, 'zzzzzzz', 0),
-(25, 10, '2020-01-01', 'azaza', 'aaaaa', 1, 0, 3, 0, 'zzzzzzz', 0),
-(26, 10, '2020-01-06', 'zzzz', 'tese', 1, 0, 2, 0, 'ee', 0),
-(27, 10, '2020-06-04', 'jjjjjjj', 'hh', 1, 0, 2, 0, 'kj', 0),
-(28, 10, '2020-01-30', 'pp', 're', 4, 0, 6, 0, 'ff', 0),
-(30, 10, '2020-02-26', 'aaaa', 'aa', 2, 0, 3, 0, 'aaaaaaa', 0),
-(31, 10, '2020-05-21', 'zae', 'zzaz', 2, 0, 6, 0, 'fd', 0),
-(32, 10, '2020-01-24', 'azazaz', 'mama', 1, 0, 2, 0, 'zz', 0),
-(33, 10, '2020-03-20', 'zza', '20 mars', 1, 0, 4, 0, 'zzzzzzz', 0),
-(34, 10, '2020-02-13', 'fiels', '13 fev', 2, 0, 5, 0, 'zzz', 0),
-(35, 10, '2020-02-28', 'ze', '28 fev', 10, 0, 12, 0, 'e', 0),
-(36, 10, '2020-03-02', 'ii', '2 mars', 1, 0, 2, 0, 'e', 0),
-(37, 10, '2020-03-10', 'but mama', '10 mars', 1, 0, 3, 0, 'ssssssq', 0),
-(38, 10, '2020-03-05', 'zez', '5 mars', 14, 0, 16, 0, 'ee', 0),
-(39, 10, '2020-06-08', 'rer', 'lundi 8 mars', 4, 0, 6, 0, 'tt', 0),
-(40, 10, '2020-03-09', 'ffs', 'lundi 9 mars', 1, 0, 3, 0, 'ezezx', 0),
-(41, 10, '2020-03-08', 'ddd', 'dim 8 mars', 4, 0, 8, 0, 'ded', 0),
-(42, 10, '2020-03-07', 'ze', 'but mama', 3, 0, 4, 0, 'eee', 0),
-(43, 10, '2020-01-03', 'eeeeeeeeeee', 'rr', 3, 0, 5, 0, 'ezez', 0),
-(44, 10, '2020-01-01', 'kkk', 'uki', 14, 0, 15, 0, 'kl', 0),
-(45, 10, '2020-12-31', 'rrr', 'test fin jeudi', 4, 0, 7, 0, 'p', 0),
-(46, 10, '2021-01-01', 'ezdafze', 'new year bitch', 7, 0, 9, 0, 'ptdr', 0),
-(47, 10, '2019-12-31', 'ptp', 'wesh mardi', 2, 0, 4, 0, 'rrr', 0),
-(48, 10, '2019-12-31', 'ptp', 'wesh mardi', 2, 0, 4, 0, 'rrr', 0),
-(49, 10, '2021-01-01', 'jk', '1 vend 2021', 3, 0, 5, 0, 'fdfd', 0),
-(50, 10, '2021-01-04', 'z', 'lundi', 3, 0, 5, 0, 'e', 0),
-(51, 10, '2018-12-31', 'cdcd', '31dec 2018', 2, 0, 4, 0, 'putiz', 0),
-(52, 10, '2019-01-01', 'zr', 'ptdr', 1, 0, 3, 0, 'rr', 0),
-(53, 10, '2019-01-01', 'pdr', 'sem1  mardi 2019', 2, 0, 4, 0, 'c', 0),
-(54, 10, '2020-06-18', 'lklkl', 'oo', 1, 0, 3, 0, 'll', 1),
-(55, 10, '2020-06-18', 'lklkl', 'oo', 1, 0, 3, 0, 'll', 1),
-(65, 10, '2020-06-23', 'zefgs', 'pride', 1, 0, 4, 0, 'opopop', 0),
-(64, 10, '2020-06-25', 'ktffffffffffffffff tyyyyyyyyyygh g ', 'réunion', 11, 0, 14, 0, 'ooo', 1);
+INSERT INTO `agenda` (`id`, `id_admin`, `date`, `description`, `titre`, `hdeb`, `mdeb`, `hfin`, `mfin`, `lieu`, `type`, `cat`) VALUES
+(73, 10, '2020-08-06', 's', 'ssssssssss', 1, 0, 2, 30, 'ddd', 1, 'atelier'),
+(72, 10, '2020-08-26', 'dsdsd', 'sqqqq', 1, 0, 3, 0, 'ssssssfsdv', 0, 'event'),
+(70, 10, '2020-08-20', 'gregr', 'atelier', 1, 0, 4, 0, 'fddddddd', 0, 'atelier'),
+(71, 10, '2020-08-25', 'rrr', 'event', 1, 0, 1, 15, 'eee', 1, 'event');
 
 -- --------------------------------------------------------
 
@@ -165,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `ressources` (
   `article` text NOT NULL,
   `type` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `ressources`
@@ -180,8 +142,29 @@ INSERT INTO `ressources` (`id`, `titre`, `id_admin`, `date`, `categorie`, `artic
 (45, 'f', 1, '2020-06-09 20:52:31', 'juridique', '', 'S'),
 (46, '', 1, '2020-06-09 20:54:30', 'juridique', '<hr><hr><hr><hr><hr>', ''),
 (47, 'f', 1, '2020-06-09 20:55:01', 'juridique', 'r<hr><hr><hr>rrr<hr><hr><hr><hr><hr><hr><hr><hr>r', ''),
-(48, 'llpp', 1, '2020-06-10 12:53:34', 'juridique', '<div align=\"center\">k<i>nnl\'eeecc<b>ccccccccccccccccc<u>xxxxxxxxxxxxxxx</u></b></i><br></div>', 'S'),
-(52, 'test ,yolo', 10, '2020-07-10 16:08:56', 'juridique', '<div align=\"right\">yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyrrrrrrrrrrrrrrrrr**</div><div align=\"right\"><ul><li><h1>tttttttttttttttttttttttttttttttttttttttttttttttttttttttt</h1></li><li><div align=\"justify\"><h1>tttttttttttttttttttttttttttttttttttttttttrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrtttttttttttttttttttttttttttttttttttttttttttttttt</h1></div></li></ul></div>', 'TP');
+(48, 'llpp', 1, '2020-08-03 11:26:30', 'juridique', '<div align=\"center\"><h1>k<i>nnl\'eeecc<b>ccccccccccccccccc<u>xxxxxxxxxxxxxxx&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nnnnnnnnnnnnnn</u></b></i></h1></div>', 'S'),
+(52, 'test ,yolo', 10, '2020-07-10 16:08:56', 'juridique', '<div align=\"right\">yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyrrrrrrrrrrrrrrrrr**</div><div align=\"right\"><ul><li><h1>tttttttttttttttttttttttttttttttttttttttttttttttttttttttt</h1></li><li><div align=\"justify\"><h1>tttttttttttttttttttttttttttttttttttttttttrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrtttttttttttttttttttttttttttttttttttttttttttttttt</h1></div></li></ul></div>', 'TP'),
+(53, 'ddfd', 10, '2020-07-13 14:03:47', 'medical', '<div>ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss<u>ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</u></div><div><u><br></u></div><div><u><br></u></div><div><u><br></u></div><div><u><br></u></div><div><u><br></u></div><div align=\"center\"><u>ddddddddddddddddddssssssss<br></u></div>', 'SPA'),
+(54, 'salut', 10, '2020-07-16 15:18:57', 'medical', '<div align=\"justify\">wesh<u> gros <br></u></div><div align=\"right\">sa fartz<br></div>', 'TA'),
+(55, 'hhhh', 10, '2020-07-16 15:49:56', 'juridique', 'nine ninz luftbalon<br>', 'P'),
+(56, 'kkk', 10, '2020-07-16 15:51:59', 'juridique', 'kjkjkk', 'A'),
+(57, 'jj', 10, '2020-07-16 15:55:10', 'juridique', 'kkk', 'A'),
+(58, 'jjj', 10, '2020-07-16 16:05:52', 'medical', 'iuuuuuuuuuuuuuuuuuuuu<u>nnnnnnnnnnn</u>', 'T'),
+(59, 'ojkkjkj', 10, '2020-07-16 16:09:24', 'medical', 'kjjjjj jjjjjjjjjj<b>jjjjjjjjjjjjjjjjjjj</b><br>', 'S'),
+(60, 'ezeze', 10, '2020-07-18 15:12:37', 'medical', 'rrrrrrrrrrrrr', 'S'),
+(61, 'kj', 10, '2020-07-18 15:17:01', 'juridique', 'kkkkkkkkkkkkkkkk', ''),
+(62, 'sqqq', 10, '2020-07-18 15:19:13', 'juridique', 'qq', ''),
+(63, 'pklklk', 10, '2020-07-18 15:32:32', 'juridique', 'lek,flrkg,kkkkervvvvvvvvvvvvvvvvvvvvvvvvvvvffffffffff', 'A'),
+(64, 'pklklk', 10, '2020-07-18 15:34:04', 'juridique', 'lek,flrkg,kkkkervvvvvvvvvvvvvvvvvvvvvvvvvvvffffffffff', 'A'),
+(65, 'pklklk', 10, '2020-07-18 15:35:22', 'juridique', 'lek,flrkg,kkkkervvvvvvvvvvvvvvvvvvvvvvvvvvvffffffffff', 'A'),
+(66, 'dfdf', 10, '2020-07-18 15:35:51', 'juridique', 'rezrefcv rrtztzcrzr <br>', ''),
+(67, 'dfdf', 10, '2020-07-18 15:36:27', 'juridique', 'rezrefcv rrtztzcrzr <br>', ''),
+(68, 'sssssss', 10, '2020-07-18 15:37:48', 'juridique', 'rgrgerggrgzergzg', 'A'),
+(69, 'k', 10, '2020-07-18 15:38:47', 'juridique', 'kkkkkkkkkkkjjj&nbsp; hhh<br>', 'P'),
+(70, 'vfezv', 10, '2020-07-18 15:41:14', 'juridique', 'ezr<b>dddddddddddddddddddddd</b>', ''),
+(71, 'vfezv', 10, '2020-07-18 15:47:13', 'juridique', 'ezr<b>dddddddddddddddddddddd</b>', ''),
+(72, 'kn k k kj', 10, '2020-07-18 15:48:32', 'juridique', 'lkl,kl,jinkl;,k,k,k;;;;;;;;;;;;;;;;;;;;;;;;;jjjjjjjj<b>kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</b>', 'P'),
+(73, 'test', 10, '2020-07-31 11:58:29', 'juridique', '<div align=\"center\"><u>test pour aujourdhui</u></div><div align=\"center\"><u><br></u></div><div align=\"center\"><u><br></u></div><div align=\"center\"><u>ppp</u></div><div align=\"right\"><u>voila</u><br></div>', 'STPA');
 
 -- --------------------------------------------------------
 
@@ -200,7 +183,8 @@ CREATE TABLE IF NOT EXISTS `stat` (
 --
 
 INSERT INTO `stat` (`ip`, `status`) VALUES
-('eb7fdf81fea97a2197b5c822987e6aaf66160564be20fdc77b20cfd185bdbcea', 'P');
+('eb7fdf81fea97a2197b5c822987e6aaf66160564be20fdc77b20cfd185bdbcea', 'P'),
+('8f7c0566b6b1e485f2ec77febde16eed7c975e70b9d5ebbb316c6bda3223da80', 'P');
 
 -- --------------------------------------------------------
 
