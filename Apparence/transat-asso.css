@@ -172,7 +172,7 @@ body
     margin-top: 1%;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
 }
 .slideshow {
     width: 70.5rem;
@@ -217,11 +217,12 @@ body
     margin-top: 10px;
     margin-bottom: 60px;
     border-radius: 20px;
-    transition: box-shadow 1s ,transform 1s; 
-    
+    transition: box-shadow 1s ,transform 1s;   
+}
+#text-index
+{
     
 }
-
 #h1_acceuil_agenda
 {
     text-align: center;

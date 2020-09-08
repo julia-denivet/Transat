@@ -137,6 +137,15 @@ function read($id,$tab)
 	return $rep;
   }
 
+  function dernier($tab)
+  {
+  	$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+	$q = $db->prepare("SELECT * FROM ".$tab."  ORDER BY date DESC LIMIT 5;");
+	$q->execute();
+	//$q->debugDumpParams();
+	$rep=$q->fetchAll();
+	return $rep;
+  }
 
   function ajoures($id)
 {
