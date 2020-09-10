@@ -503,4 +503,20 @@ table.planning_transat {
 
 
   
-  
+  /*blog*/
+  #blogmain
+  {
+    
+  }
+  #pannavblog
+  {
+
+  }
+  #resblog
+  {
+
+  }
+  .tagselect
+  {
+    color: red;
+  }

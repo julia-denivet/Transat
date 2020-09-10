@@ -172,7 +172,15 @@ function read($id,$tab)
 }
 
 
-
+function motcle()
+{
+	$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+	$q = $db->prepare("SELECT * FROM `motcle` ");
+	$q->execute();
+	//$q->debugDumpParams();
+	$rep=$q->fetchAll();
+	return $rep;
+}
 
 //function auto
 function verifsession()

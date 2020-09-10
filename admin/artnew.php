@@ -21,10 +21,11 @@
 		$linkbd = mysqli_connect("localhost","root","","transat");
 		$_POST['titre']=addslashes($_POST['titre']);
 		$_POST['art']=addslashes($_POST['art']);
-		$sql="INSERT INTO `article` (`id`,`titre`,`id_admin`, `date`, `categorie`, `article`,`type`) VALUES (NULL,'".$_POST['titre']."', '".$_SESSION['admid']."', NOW(), '".$_POST['catres']."', '".$_POST['art']."','".$type."');";
+		$sql="INSERT INTO `article` (`id`,`titre`,`id_admin`, `date`, `categorie`, `article`,`type`,`mot`) VALUES (NULL,'".$_POST['titre']."', '".$_SESSION['admid']."', NOW(), '".$_POST['catres']."', '".$_POST['art']."','".$type."','".$_POST['motcle']."');";
 		$a=mysqli_query($linkbd,$sql);
 	}
 	var_dump($_POST);
+    $mot=motcle();
 ?>
 <form method="post" action="admin.php?art&new">
 	<label>titre</label><input type="text" name="titre">
@@ -71,10 +72,53 @@
     <input type="checkbox" name="A">
     <label>Autre</label>
 	<input type="submit" name="newres">
+    <div>
+        <label>mots-clées</label>
+        <input id="recupmot" type="hidden" name="motcle" value="">
+        <?php
+        foreach ($mot as $m) 
+        {
+        ?>
+        <label id="<?=$m['id']?>" onclick="ajmot(<?=$m['id']?>)"><?=$m['mot']?></label>
+        <?php
+        }
+        
+        
+        ?>
+    </div>
 </form>
 <script type="text/javascript">
 	document.addEventListener("keyup", textzoneSave);
+    function ajmot(id)
+    {   
+        if(document.getElementById(id).value==undefined||document.getElementById(id).value==false)
+        {   
+            document.getElementById(id).value=true;
+            document.getElementById("recupmot").value+=id+"!!";
+            document.getElementById(id).classList.add("motselec");
+        }
+        else
+        {   
+            document.getElementById(id).classList.remove("motselec");
+            document.getElementById(id).value=false;
+            str=document.getElementById("recupmot").value.split("!!");
+            console.log(str);
+            document.getElementById("recupmot").value="";
+            for (var i = str.length - 1; i >= 0; i--) 
+            {
+                if(str[i]==id||str[i]=="")
+                {}
+                else
+                {
+                    document.getElementById("recupmot").value+=str[i]+"!!";
+                }               
+            }
+        }
 
+        console.log(document.getElementById("recupmot"));
+        console.log(document.getElementById(id).value);
+    }
+   
 	function textzoneSave()
 	{
 		var editor = document.getElementById("Editor").innerHTML;
