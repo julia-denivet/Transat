@@ -81,11 +81,11 @@
 
 						?>
 						<td class="cel-cal">
-						<div class="caseplan">
+						
 						<?php 
 							if($testmoi===true)
 							{
-								?>
+								?>	<div class="caseplan">
 									<p><?=$numjour?></p>
 								<?php
 								$numjour++;
@@ -94,6 +94,10 @@
 									$testmoi=false;
 									$end=true;
 								}
+							}
+							else
+							{
+								?><div hidden="true"><?php
 							}
 						?>
 

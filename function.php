@@ -101,7 +101,7 @@ function page($page,$nb,$tab)
 	$ofset=$page*$nb;
 	$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
 
-	$q = $db->prepare("SELECT * FROM ".$tab." ORDER BY date LIMIT ".$ofset." , ".$nb." ;");
+	$q = $db->prepare("SELECT * FROM ".$tab." ORDER BY date desc LIMIT ".$ofset." , ".$nb." ;");
 	$q->execute();
 	//$q->debugDumpParams();
 	$rep=$q->fetchAll();
@@ -182,6 +182,25 @@ function motcle()
 	return $rep;
 }
 
+function decomotcle($str,$tabmot)
+{
+	$tabdeco=explode("!!", $str);
+	$tfin=array();
+	foreach ($tabdeco as $td) 
+	{
+		if(!empty($td))
+		{
+			foreach ($tabmot as $tm)
+			{
+				if($tm['id']==$td)
+				{
+					array_push($tfin,$tm['mot']);
+				}
+			}
+		}
+	}
+	return $tfin;
+} 
 //function auto
 function verifsession()
 {

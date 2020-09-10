@@ -351,20 +351,17 @@ table.planning_transat {
     border-collapse: collapse;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     width: 100%;
-   
+   background-color: brown;
  
   }
 
   table.planning_transat td, table.planning_transat th {
-    border: 1px solid #e5dcf1;
+    /*border: 1px solid #e5dcf1;*/
     
     
   }
-  table.planning_transat tbody td {
-    font-size: 15px;
-    font-weight: bold;
-    background: #acc9e7 ;
-    
+  table.planning_transat tbody td 
+  {
     
   }
 
@@ -398,6 +395,10 @@ table.planning_transat {
     display: flex;
     flex-direction: column;
     height: 100%;
+     font-size: 15px;
+    font-weight: bold;
+    background: #acc9e7 ;
+    border: 1px solid #e5dcf1;
 }
 .caseplan > p
 {
@@ -409,8 +410,8 @@ table.planning_transat {
 }
 .cel-cal
 {
-    width: 8vw;
-    height: 10vh;
+    width: 9vw;
+    height: 15vh;
 }
 .flex_calendrier_transat
 {
@@ -506,17 +507,51 @@ table.planning_transat {
   /*blog*/
   #blogmain
   {
-    
+    display: flex;
+    width: 100%;
   }
   #pannavblog
   {
-
+    width: 30%;
+  }
+  #artmotcle
+  {
+    width: 100%;
+  }
+  #globmocle
+  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
   #resblog
   {
-
+    width: 70%;
+    display: flex;
+    flex-direction: column;
   }
   .tagselect
   {
     color: red;
+  }
+
+  .divartmotcle
+  {
+    width: 70%;
+  }
+  .divartmotcle b
+  {
+    margin-left: 1%;
+  }
+  .artlink
+  {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 5%;
+  }
+  .artavmc
+  {
+    display: flex;
+    justify-content: space-between;
   }

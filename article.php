@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('function.php');
+$mot=motcle();
 $artc=conseille($_SESSION['user'],'article');
 ?>
 <html>
@@ -21,11 +22,11 @@ $artc=conseille($_SESSION['user'],'article');
            <?php
            	if(!isset($_GET['id'])) 
            	{
-              $mot=motcle();
               ?>
               <section id="pannavblog">
               <div id="artmotcle">
               <h3>mots clé(3 maximum)</h3>
+              <div id="globmocle">
               <?php  
               foreach ($mot as $m) 
               {
@@ -74,14 +75,15 @@ $artc=conseille($_SESSION['user'],'article');
                         ?><a href="article.php?tag1=<?=$_GET['tag1']?>&tag2=<?=$_GET['tag2']?>" class="tagselect"><?=$m['mot']?></a><?php
                         break;
                       default:
-                        ?><a href="article.php?tag1=<?=$_GET['tag1']?>&tag2=<?=$_GET['tag2']?>&tag3=<?=m['id']?>"><?=$m['mot']?></a><?php
+                        ?><a href="article.php?tag1=<?=$_GET['tag1']?>&tag2=<?=$_GET['tag2']?>&tag3=<?=$m['id']?>"><?=$m['mot']?></a><?php
                         break;
                     }
                 }
               }
-              ?>                
+              ?> 
+              </div>               
               </div>
-             
+            <?php if(!isset($_GET['tag1'])) {?>
 						<div>
               <h3>Selectioner pour vous</h3>
             <?php
@@ -89,16 +91,29 @@ $artc=conseille($_SESSION['user'],'article');
                 {
                 ?>
                 <a href="article.php?id=<?=$ic['id']?>">
-           		   	<div>
-           			  	<p><?=$ic['titre']?></p>
-           			  	<p><?=$ic['date']?></p>
-           			  	<p><?=$ic['categorie']?></p>
+           		   	<div class="artlink">
+                    <div class="artavmc">
+           			  	 <p><?=$ic['titre']?></p>
+           			  	 <p><?=date("j/m/Y ", strtotime($ic['date']))?></p>
+                    </div>
+                    <?php 
+                      $mcledeco=decomotcle($ic['mot'],$mot);
+                      if(!empty($mcledeco))
+                      {?><i>mot(s)-clé(s):</i><div class="divartmotcle"><?php
+                        foreach ($mcledeco as $lmot) 
+                        {
+                          ?><b><?=$lmot?></b><?php
+                        }
+                        ?></div><?php
+                      }
+                    ?>
            			  </div>
            			</a>
                 <?php   
                 }
   							?>
   						</div>
+            <?php } ?>
             </section>
             <section id="resblog">
   						<?php
@@ -133,10 +148,22 @@ $artc=conseille($_SESSION['user'],'article');
            				{
            					?>
            					<a href="article.php?id=<?=$pl['id']?>">
-           						<div>
-           							<p><?=$pl['titre']?></p>
-           							<p><?=$pl['date']?></p>
-           							<p><?=$pl['categorie']?></p>
+           						<div class="artlink">
+                        <div class="artavmc">
+           							  <p>titre : <?=$pl['titre']?></p>
+           							  <p><?=date("j/m/Y ", strtotime($pl['date']))?></p>
+                        </div>
+                        <?php 
+                        $mcledeco=decomotcle($pl['mot'],$mot);
+                        if(!empty($mcledeco))
+                        {?><i>mot(s)-clé(s):</i><div class="divartmotcle"><?php
+                         foreach ($mcledeco as $lmot) 
+                        {
+                          ?><b><?=$lmot?></b><?php
+                        }
+                        ?></div><?php
+                      }
+                    ?>
            						</div>
            					</a>
            					<?php
@@ -153,8 +180,18 @@ $artc=conseille($_SESSION['user'],'article');
            			<h><?=$cont[0]['titre']?></h>
            			<section>
            				<?=$cont[0]['article']?>
-           				<i><?=$cont[0]['date']?></i>
-           				<p>catégorie : <a href=""><?=$cont[0]['categorie']?></a></p>
+           				<i><?=date("j/m/Y ", strtotime($cont[0]['date']))?></i>
+                  <?php 
+                      $mcledeco=decomotcle($cont[0]['mot'],$mot);
+                      if(!empty($mcledeco))
+                      {?><i>mot(s)-clé(s):</i><div class="divartmotcle"><?php
+                        foreach ($mcledeco as $lmot) 
+                        {
+                          ?><b><?=$lmot?></b><?php
+                        }
+                        ?></div><?php
+                      }
+                    ?>
            			</section>
            		</article>
            		<?php
