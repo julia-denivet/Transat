@@ -398,7 +398,6 @@ table.planning_transat {
      font-size: 15px;
     font-weight: bold;
     background: #acc9e7 ;
-    border: 1px solid #e5dcf1;
 }
 .caseplan > p
 {
@@ -509,6 +508,7 @@ table.planning_transat {
   {
     display: flex;
     width: 100%;
+    background-color: #e5e5e5;
   }
   #pannavblog
   {

@@ -140,7 +140,7 @@ $artc=conseille($_SESSION['user'],'article');
               }
               else
               {
-                $p=page(0,4,'article');
+                $p=page(0,50,'article');
               }
 						      
 
