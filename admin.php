@@ -1,4 +1,3 @@
-
 <?php
 /*
 	var nessessaire:
@@ -33,6 +32,7 @@ include('function.php');
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="Apparence/admin.css">
 	<title>Admin transat</title>
 </head>

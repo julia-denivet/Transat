@@ -81,7 +81,7 @@ function newplan($title,$date,$hdeb,$mdeb,$hfin,$mfin,$lieu,$desc,$type,$cat)
 }
 function cat()
 {
-	$sql="SELECT `cat` FROM `agenda` GROUP BY cat";
+	$sql="SELECT `nom` FROM `imageplan` ";
 	$db= new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
 	$q = $db->prepare($sql);
 	$q->execute();

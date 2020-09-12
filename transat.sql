@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 24 août 2020 à 18:46
--- Version du serveur :  5.7.26
--- Version de PHP :  7.2.18
+-- Généré le :  sam. 12 sep. 2020 à 12:45
+-- Version du serveur :  5.7.19
+-- Version de PHP :  5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,7 +46,6 @@ CREATE TABLE IF NOT EXISTS `administeur` (
 INSERT INTO `administeur` (`id`, `login`, `password`, `statut`) VALUES
 (10, 'admin', '81e3c8bcfc8e49179a52aa476184b33ce1f5d8ec2ecde223298ec5493c1d51aa', 0),
 (6, 'm', '0393ae44f80a22d9ffa8b8c876e4f3105286d7ec7584c8771bb0cf1850bad7c6', 2),
-(7, 'a', '?', 1),
 (8, 'p', '818d0690331a42c99c7d020f5bd1811dfa84fcaf2133050b4468272395f1f413', 1),
 (9, 'bg', '13a15c6ace039262293756c1ff7803c3ed3521f30acacdf51a477d35e145d0d5', 1);
 
@@ -71,17 +70,17 @@ CREATE TABLE IF NOT EXISTS `agenda` (
   `type` int(11) NOT NULL,
   `cat` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `agenda`
 --
 
 INSERT INTO `agenda` (`id`, `id_admin`, `date`, `description`, `titre`, `hdeb`, `mdeb`, `hfin`, `mfin`, `lieu`, `type`, `cat`) VALUES
-(73, 10, '2020-08-06', 's', 'ssssssssss', 1, 0, 2, 30, 'ddd', 1, 'atelier'),
-(72, 10, '2020-08-26', 'dsdsd', 'sqqqq', 1, 0, 3, 0, 'ssssssfsdv', 0, 'event'),
 (70, 10, '2020-08-20', 'gregr', 'atelier', 1, 0, 4, 0, 'fddddddd', 0, 'atelier'),
-(71, 10, '2020-08-25', 'rrr', 'event', 1, 0, 1, 15, 'eee', 1, 'event');
+(75, 10, '2020-09-22', 'eeeeeeeee', 'eeee', 2, 0, 9, 0, 'ddd', 1, 'event'),
+(79, 10, '2020-09-09', 'yolo swagg', 'arelier test', 9, 0, 12, 15, 'marseille', 0, 'atelier'),
+(78, 10, '2020-09-22', 'zaza', 'event', 12, 0, 14, 0, 'p', 1, 'event');
 
 -- --------------------------------------------------------
 
@@ -95,21 +94,64 @@ CREATE TABLE IF NOT EXISTS `article` (
   `titre` varchar(255) NOT NULL,
   `id_admin` int(11) NOT NULL,
   `date` datetime NOT NULL,
-  `categorie` varchar(255) NOT NULL,
   `article` text NOT NULL,
   `type` varchar(255) NOT NULL,
+  `mot` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `article`
 --
 
-INSERT INTO `article` (`id`, `titre`, `id_admin`, `date`, `categorie`, `article`, `type`) VALUES
-(15, 'k', 1, '2020-06-10 12:50:54', 'juridique', '<b>a</b>', ''),
-(16, 'z', 1, '2020-06-10 09:03:22', 'juridique', 'l<hr<', ''),
-(17, 'ddddddd', 10, '2020-07-10 16:14:20', 'juridique', '<div align=\"center\">ssssssssssssssssssssssssssssssssssssssssssssssssssssss</div><div align=\"right\"><ul><li>sssssssssssssssssssss</li><li>qqqqqqqqqqqqqqq</li><li>xxxxxxxxxxxxxxx</li></ul><h1>vvvvvvvvvvvvvvvvvvvvv</h1><div>sssssssss</div><div><br></div></div>', 'SA'),
-(18, '', 10, '2020-07-13 09:27:10', 'juridique', '', 'P');
+INSERT INTO `article` (`id`, `titre`, `id_admin`, `date`, `article`, `type`, `mot`) VALUES
+(25, 'juridique', 10, '2020-09-10 12:07:01', '<div align=\"center\">defzefezfef</div>', 'T', ''),
+(26, 'dsdf', 10, '2020-09-10 12:08:03', 'dsds', 'STPA', '1!!'),
+(27, 'cfdfd', 10, '2020-09-10 12:09:29', 'fdddddddddddddd', 'P', '2!!');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `imageplan`
+--
+
+DROP TABLE IF EXISTS `imageplan`;
+CREATE TABLE IF NOT EXISTS `imageplan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `imageplan`
+--
+
+INSERT INTO `imageplan` (`id`, `nom`) VALUES
+(1, 'event'),
+(2, 'atelier');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `motcle`
+--
+
+DROP TABLE IF EXISTS `motcle`;
+CREATE TABLE IF NOT EXISTS `motcle` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mot` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `motcle`
+--
+
+INSERT INTO `motcle` (`id`, `mot`) VALUES
+(1, 'juridique'),
+(2, 'social'),
+(3, 'humain'),
+(4, 'transidentité');
 
 -- --------------------------------------------------------
 
