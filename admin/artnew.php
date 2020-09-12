@@ -27,10 +27,27 @@
 	//var_dump($_POST);
     $mot=motcle();
 ?>
+<div id="choiximg" hidden="true">
+    <p>inserer une image</p>
+    <label>url</label>
+    <input type="text" name="imgurl" id="imgurl">
+    <label>ou</label>
+    <input type="file" name="imgfile" id="imgfile">
+    <b id="inserimg">inserer</b>
+</div>
+<div id="sizeimg" hidden="true">
+    <label>redimentioner l'image</label>
+    <label>largeur</label>
+    <input type="number" id="wdth" name="wdth">
+    <label>longueur</label>
+    <input type="number" id="hght" name="hght">
+    <b id="modimg">modifier</b>
+</div>
 <form method="post" action="admin.php?art&new">
 	<label>titre</label><input type="text" name="titre">
 	<div class="editor-commands">
     <ul>
+        <li><a data-command="insertimage">image</a></li>
         <li><a data-command="undo">Annuler</a></li>
         <li><a data-command="redo">Répéter</a></li>
         <li><a data-command="insertHorizontalRule">hr</a></li>
@@ -56,7 +73,7 @@
 </div>
 <div id="Editor" class="editor" contenteditable="true"></div>
 
-<input id="textzone" type="hidden"  name="art" value="">
+<input id="textzone"   name="art" value="">
 
     <input type="checkbox" name="S">
     <label>Santé</label>
@@ -142,26 +159,72 @@
         
         document.getElementById("textzone").value=editor;
 	}
-
+//command pour menu
    var commandButtons = document.querySelectorAll(".editor-commands a");
-for (var i = 0; i < commandButtons.length; i++) {
+for (var i = 0; i < commandButtons.length; i++) 
+{
     commandButtons[i].addEventListener("mousedown", function (e) {
         e.preventDefault();
 
        
         var commandName = e.target.getAttribute("data-command");
-        if (commandName === "html") {
+        if (commandName === "html") 
+        {
             var commandArgument = e.target.getAttribute("data-command-argument");
             document.execCommand('formatBlock', false, commandArgument);
             textzoneSave();
-        } else {
-            document.execCommand(commandName, false);
-            textzoneSave();
+        } 
+        else 
+        {
+            if(commandName=="insertimage")
+            {
+                document.getElementById('choiximg').hidden=false;
+                document.getElementById('inserimg').onclick = function()
+                { 
+
+                   if(document.getElementById('imgurl').value)
+                    {
+                         document.getElementById('Editor').innerHTML+="<img onclick ='sizeimg(this)' width='100vw' height='100vh' src="+document.getElementById('imgurl').value+">";
+                        textzoneSave();
+                    }
+                }  
+            }
+            else
+            {
+                document.execCommand(commandName, false);
+                textzoneSave();  
+            }
         }
        
 
     }); 
     
+}
+
+function sizeimg(x)
+{
+    console.log(x);
+    document.getElementById('sizeimg').hidden=false;
+    document.getElementById('wdth').value=Math.round(vw(x.offsetWidth));
+    document.getElementById('hght').value=Math.round(vh(x.offsetHeight));
+    document.getElementById('modimg').onclick= function()
+    {
+        x.style.height=document.getElementById('hght').value+"vh";
+        x.style.width=document.getElementById('wdth').value+"vw";
+    }
+    console.log(x.offsetWidth);
+    console.log(x.offsetHeight)
+
+}
+
+function vw(px)
+{
+    return px * (100 / document.documentElement.clientWidth);
+}
+
+function vh(px) 
+{
+    return px * (100 / document.documentElement.clientHeight);
 }
 
 </script>
