@@ -33,7 +33,7 @@
     <input type="text" name="imgurl" id="imgurl">
     <label>ou</label>
     <input type="file" onchange="encodeImageFileAsURL(this)" name="imgfile" id="imgfile">
-    <input type="text" id="64img" >    
+    <input type="text" id="64img" hidden="true">    
     <b id="inserimg">inserer</b>
 </div>
 <div id="sizeimg" hidden="true">
@@ -187,6 +187,7 @@ for (var i = 0; i < commandButtons.length; i++)
                     {
                          document.getElementById('Editor').innerHTML+="<img onclick ='sizeimg(this)' width='100vw' height='100vh' src="+document.getElementById('imgurl').value+">";
                         textzoneSave();
+                        document.getElementById('choiximg').hidden=true;
                     }
                     if(document.getElementById('imgfile').value)
                     {
@@ -202,12 +203,10 @@ for (var i = 0; i < commandButtons.length; i++)
                                 treptex=this.responseText;
                                 if(treptex)
                                 {
-                                    console.log(treptex);   
-                                
-                                    
-                                    
+                                   
                                      document.getElementById('Editor').innerHTML+="<img onclick ='sizeimg(this)' width='100vw' height='100vh' src="+treptex+">";
                                         textzoneSave();
+                                        document.getElementById('choiximg').hidden=true;
                                     
                                 }
                     
@@ -244,6 +243,7 @@ function sizeimg(x)
     {
         x.style.height=document.getElementById('hght').value+"vh";
         x.style.width=document.getElementById('wdth').value+"vw";
+        document.getElementById('sizeimg').hidden=true;
     }
     console.log(x.offsetWidth);
     console.log(x.offsetHeight)

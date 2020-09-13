@@ -42,7 +42,7 @@ if(isset($_POST['img']))
 		$typeimg = finfo_buffer($f, $imgsq, FILEINFO_MIME_TYPE);
 		$a=explode("/", $typeimg);
 		file_put_contents("../imgserveur/".$nomimg.".".$a[1], $imgsq);
-		echo "/imgserveur/".$nomimg.".".$a[1];
+		echo "imgserveur/".$nomimg.".".$a[1];
 	}
 
 }
