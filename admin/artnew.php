@@ -32,7 +32,8 @@
     <label>url</label>
     <input type="text" name="imgurl" id="imgurl">
     <label>ou</label>
-    <input type="file" name="imgfile" id="imgfile">
+    <input type="file" onchange="encodeImageFileAsURL(this)" name="imgfile" id="imgfile">
+    <input type="text" id="64img" >    
     <b id="inserimg">inserer</b>
 </div>
 <div id="sizeimg" hidden="true">
@@ -187,6 +188,38 @@ for (var i = 0; i < commandButtons.length; i++)
                          document.getElementById('Editor').innerHTML+="<img onclick ='sizeimg(this)' width='100vw' height='100vh' src="+document.getElementById('imgurl').value+">";
                         textzoneSave();
                     }
+                    if(document.getElementById('imgfile').value)
+                    {
+                        console.log(document.getElementById('64img').value)
+                        encodeImageFileAsURL(document.getElementById('imgfile'))
+                        console.log(document.getElementById('64img').value)
+                        //ajax
+                        xmlhttp=new XMLHttpRequest();
+                        xmlhttp.onreadystatechange=function() 
+                        {
+                            if (this.readyState==4 && this.status==200) 
+                            {   
+                                treptex=this.responseText;
+                                if(treptex)
+                                {
+                                    console.log(treptex);   
+                                
+                                    
+                                    
+                                     document.getElementById('Editor').innerHTML+="<img onclick ='sizeimg(this)' width='100vw' height='100vh' src="+treptex+">";
+                                        textzoneSave();
+                                    
+                                }
+                    
+                            }
+                
+                        }
+                        xmlhttp.open("POST","admin/ajaxadmin.php",true);
+                        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xmlhttp.send("img="+document.getElementById('64img').value);
+                        //finajax
+
+                    }
                 }  
             }
             else
@@ -216,7 +249,24 @@ function sizeimg(x)
     console.log(x.offsetHeight)
 
 }
+function encodeImageFileAsURL(element) 
+{
+    file = element.files[0];
+    reader = new FileReader();
+    reader.onload = function() 
+    {
+            
+        ressq=reader.result;
+        ressq=ressq.split(",");
+        console.log(ressq)
+        ressq.length 
+        resq=ressq[ressq.length-1];
+        document.getElementById('64img').value=resq;
+        
+    }
+        reader.readAsDataURL(file);
 
+}
 function vw(px)
 {
     return px * (100 / document.documentElement.clientWidth);
