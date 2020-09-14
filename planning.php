@@ -32,7 +32,7 @@
 		//var_dump($moii);
 	} 
 	$q = $db->prepare("SELECT * ,DATE_FORMAT(date,'%e') as jr FROM `agenda` WHERE DATE_FORMAT(date,'%m') = ".$moi." AND DATE_FORMAT(date,'%Y') = ".$ann.";");
-	//var_dump($q);
+	var_dump($q);
 	//var_dump($ann,$sem);
 	$jourdepart=date('w',strtotime($ann."-".$moii."-01"));
 	setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
