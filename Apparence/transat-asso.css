@@ -390,6 +390,8 @@ table.planning_transat thead th {
     margin-top: 1rem;
     background: #e5dcf1;
 }
+
+/*CONTACT*/
 #contact {
     display: flex;
     flex-direction: column;
