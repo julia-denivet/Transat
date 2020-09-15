@@ -1,15 +1,19 @@
 <?php
 	$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
+	/*Verifier si une date (moi et année ) on été passer dans url(bouton suivant et précédent*/
 	if(!isset($_GET['moi'])||!isset($_GET['ann']))
-	{
+	{	
+		/*si pas de date on prend la date actuelle de l'année et le mois (en chifre et en lettre)*/
 		$ann=date("Y");
 		$moi=date("n");
 		$moii=date("m");
 	}
 	else
 	{
+		/*sinon on recupere la date transmise dans l'url */
 		$ann=$_GET['ann'];
 		$moi=$_GET['moi'];
+		/*le javascrip ne gerant pas les dates il faut coriger en php les ereurs potentielle exemple il n'y a pas de 0 eme mois ou de 13 eme mois*/
 		switch ($moi) {
 			case 0:
 				$moi=12;
@@ -27,14 +31,15 @@
 		$moii=$moi;
 		if(strlen($moii)==1) 
 		{
+			/*par securité une derniere corection est àporté affin d'eviter les probleme de convestion sans les 0 initiaux l 42*/
 			$moii="0".$moii;
 		}
 		//var_dump($moii);
 	} 
 	$q = $db->prepare("SELECT * ,DATE_FORMAT(date,'%e') as jr FROM `agenda` WHERE DATE_FORMAT(date,'%m') = ".$moi." AND DATE_FORMAT(date,'%Y') = ".$ann.";");
-	//var_dump($q);
-	//var_dump($ann,$sem);
-	$jourdepart=date('w',strtotime($ann."-".$moii."-01"));
+	
+	
+	$jourdepart=date('w',strtotime($ann."-".$moii."-01"));/*trouve le premier jour du mois*/
 	setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
 	$nommoi=(strftime("%B",strtotime($ann."-".$moii."-01"))); 
 	if($jourdepart==0){$jourdepart=7;}
