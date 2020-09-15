@@ -17,7 +17,6 @@ function conexionAdmin($login,$mdp)//permet aux admin de se conecter
 	if(empty($rep))
 	{
 		$error="Si t'es admin verifie ton login, si tu l'es pas bouge de la !";
-
 		return $error;
 	}
 	else
@@ -26,7 +25,6 @@ function conexionAdmin($login,$mdp)//permet aux admin de se conecter
 		$_SESSION['admid'] = $rep['id'];
 		$_SESSION['admstat'] = $rep['statut'];
 	}
-	
 }
 
 function newuser($login,$mdp,$remdp,$statut)//permet à l'admin de rajouter un utilisateur

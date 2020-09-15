@@ -1,9 +1,11 @@
 <?php
 /*
-	var nessessaire:
+	type var nessessaire:
+	post,session
 		
 	var demandé:
-	mdp et login admin
+	mdp ,statut ,login admin
+
 
 	var modifiable ou créable:	
 	admin
@@ -12,9 +14,10 @@
 	admin
 
 	sql demandé:
-
+	toute table
+	
 	sql modifiable ou créable:	
-	new article, new produit
+	toute table
 */
 session_start();
 include('function.php');
@@ -100,7 +103,7 @@ else
 		
 		<?php if(isset($_GET['users'])&&$_SESSION['admstat']==0){ ?>
 		<header id="headAdmin">
-			<a href="admin.php?users&new">Ajouter Un nouvelle utilisateur</a>
+			<a href="admin.php?users&new">Ajouter Un nouvel utilisateur</a>
 			<a href="admin.php?users&sup">Suprimer Utilisateur</a>
 			<a href="admin.php">Retour</a>
 		</header>

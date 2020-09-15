@@ -5,7 +5,6 @@ body
 	background: url(../Medias/Logos/logo.png);
 	background-size: 60% ;
 	background-repeat: no-repeat;
-	width: 100vw;
 	height: 100vh;
 }
 #bco
@@ -91,9 +90,47 @@ body
 }
 .motselec
 {
-	color: cyan;
+	color: red;
 }
 #motcleadm
 {
 	
+}
+#formarticle
+{
+	margin:0%;
+	margin-top: 1%;
+	background-color: #ffffff57;
+	width: 100%;
+	padding: 0%;
+}
+#Editor
+{
+	background-color: #ffffffd6;
+}
+.editor {
+    min-height: 300px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.editor-commands>ul
+{
+margin: 0%;
+padding: 0%;
+display: flex;
+justify-content: center;
+width: 100%;
+}
+.editor-commands>ul
+{
+   list-style-type:none;  
+   display: flex;
+   width: 100%;
+   justify-content: space-around;
+   padding:0%;
+}
+.editor-commands>ul>li
+{   
+	font-size: 70%;
 }

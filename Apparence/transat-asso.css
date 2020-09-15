@@ -549,6 +549,12 @@ table.planning_transat {
     flex-direction: column;
     width: 70%;
     margin-left: 5%;
+    box-shadow: 3px 3px 7px black;
+    border-radius: 5px;
+    margin-top: 2%;
+    padding: 1%;
+    background-color: white;
+    color: #2f1f2e;
   }
   .artavmc
   {

@@ -44,11 +44,11 @@
     <input type="number" id="hght" name="hght">
     <b id="modimg">modifier</b>
 </div>
-<form method="post" action="admin.php?art&new">
+<form id="formarticle" method="post" action="admin.php?art&new">
 	<label>titre</label><input type="text" name="titre">
 	<div class="editor-commands">
     <ul>
-        <li><a data-command="insertimage">image</a></li>
+        <li><a data-command="insertimage">Image</a></li>
         <li><a data-command="undo">Annuler</a></li>
         <li><a data-command="redo">Répéter</a></li>
         <li><a data-command="insertHorizontalRule">hr</a></li>
@@ -60,21 +60,20 @@
         <li><a data-command="justifyCenter">Justifier centre</a></li>
         <li><a data-command="justifyRight">Justifier droite</a></li>
         <li><a data-command="justifyFull">Justifier completement</a></li>
-        <li><a data-command="indent">indenté</a></li>
-        <li><a data-command="outdent">outdent</a></li>
-        <li><a data-command="insertUnorderedList">Liste a puce</a></li>
+        <li><a data-command="indent">Indenté</a></li>
+        <li><a data-command="outdent">Outdent</a></li>
+        <li><a data-command="insertUnorderedList">Liste à puce</a></li>
         <li><a data-command="insertOrderedList">Liste ordoné</a></li>
         <li><a data-command="html" data-command-argument="h1">titre 1</a></li>
         <li><a data-command="html" data-command-argument="h2">titre 2</a></li>
         <li><a data-command="html" data-command-argument="h3">titre 3</a></li>
         <li><a data-command="html" data-command-argument="p">Paragraphe</a></li>
-        <li><a data-command="subscript">indice</a></li>
+        <li><a data-command="subscript">Indice</a></li>
         <li><a data-command="superscript">Exposant</a></li>
     </ul>
-</div>
-<div id="Editor" class="editor" contenteditable="true"></div>
-
-<input id="textzone"   name="art" value="">
+    </div>
+    <div id="Editor" class="editor" contenteditable="true"></div>
+    <input id="textzone"   name="art" value="">
 
     <input type="checkbox" name="S">
     <label>Santé</label>
@@ -235,7 +234,6 @@ for (var i = 0; i < commandButtons.length; i++)
 
 function sizeimg(x)
 {
-    console.log(x);
     document.getElementById('sizeimg').hidden=false;
     document.getElementById('wdth').value=Math.round(vw(x.offsetWidth));
     document.getElementById('hght').value=Math.round(vh(x.offsetHeight));
@@ -245,9 +243,6 @@ function sizeimg(x)
         x.style.width=document.getElementById('wdth').value+"vw";
         document.getElementById('sizeimg').hidden=true;
     }
-    console.log(x.offsetWidth);
-    console.log(x.offsetHeight)
-
 }
 function encodeImageFileAsURL(element) 
 {
@@ -278,22 +273,3 @@ function vh(px)
 }
 
 </script>
-<style type="text/css">
-.editor {
-    min-height: 300px;
-    width: 100%;
-    border: 1px solid black;
-}
-.editor-commands>ul
-{
-   list-style-type:none;  
-   display: flex;
-   width: 100%;
-   justify-content: space-around;
-}
-.editor-commands>ul>li
-{   
-
-}
-
-</style>
