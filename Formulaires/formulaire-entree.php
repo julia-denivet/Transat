@@ -9,12 +9,12 @@
                 <form method="post" action="pre-index.php">
                     <div class="form-group col-8">
                     <label for="inputState">Dites-nous qui vous êtes : </label>
-                    <select id="inputState" class="form-control" name="user">
-                        <option value="stupide" selected>-Vous êtes-</option>
-                        <option value="s">Un professionnel de santé</option>
-                        <option value="t">Une personne Trangenre/Non binaire/En Questionement</option>
-                        <option value="p">une personne proche</option>
-                        <option value="a">autre où ne souhaite pas répondre</option>
+                    <select id="inputState" class="form-control form_pre_index" name="user">
+                        <option class='color_option' value="stupide" selected>-Vous êtes-</option>
+                        <option class='color_option'value="s">Un professionnel de santé</option>
+                        <option class='color_option'value="t">Une personne Trangenre/Non binaire/En Questionement</option>
+                        <option  class='color_option' value="p">une personne proche</option>
+                        <option  class='color_option'value="a">autre où ne souhaite pas répondre</option>
                     </select>
                     </div>
                     <input type="submit" name="Valider" class="btn btn-primary button_valider"></input>

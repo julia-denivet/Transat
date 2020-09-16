@@ -1,5 +1,6 @@
 body {
-    font-family: 'Comic Neue', cursive;
+    font-family: 'arial', cursive;
+    background-color: #e5dcf1;
 }
 
 .lateral {
@@ -15,7 +16,6 @@ body {
     padding: 0;
     height: 100%;
     overflow-x: hidden;
-    background-color: #e5e5e5;
 }
 
 .main_index {
@@ -32,7 +32,7 @@ body {
 .section_header {
     min-height: 150px;
     width: 100%;
-    background-color: #acc9e7;
+    background-color: #e5dcf1;
     display: flex;
     flex-direction: row;
     padding-top: 20px;
@@ -52,7 +52,8 @@ body {
 
 .header {
     min-height: 50px;
-    background-color: #e5dcf1;
+    background-color: #acc9e7;
+    ;
     font-size: 20px;
 }
 
@@ -65,7 +66,7 @@ body {
 
 .a_header {
     text-decoration: none;
-    color: #551A8B;
+    color: black;
 }
 
 .a_header:hover {
@@ -122,6 +123,16 @@ body {
     margin-top: 50px;
 }
 
+.form-control {
+    background-color: #e5dcf1;
+    color: black;
+}
+
+.color_option {
+    background-color: #acc9e7;
+    ;
+}
+
 #pre_index_div_img {
     display: flex;
     flex-direction: column;
@@ -143,6 +154,8 @@ body {
 
 .body_pre_index {
     font-family: 'Comic Neue', cursive;
+    background-color: #e5dcf1;
+    ;
 }
 
 
@@ -150,7 +163,6 @@ body {
 
 .container-fluid {
     padding: 0;
-    background-color: #e5e5e5;
 }
 
 #contSlid {
@@ -158,6 +170,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .slideshow {
@@ -196,7 +209,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     width: 25rem;
-    max-height: 60rem;
+    max-height: 70rem;
     background-color: #acc9e7;
     margin-left: 10px;
     margin-top: 10px;
@@ -274,6 +287,16 @@ body {
 }
 
 /*planning-index*/
+#newsplan .flex_calendrier_transat {
+    width: 22rem;
+    margin-left: 1vh;
+}
+#newsplan td {
+    height: 6vh;
+}
+#newsplan .planning_transat {
+    max-height: ;
+}
 #newsplan #planbutt {
     display: none;
 }
