@@ -525,6 +525,11 @@ table.planning_transat {
     margin-top: 2%;
     margin-bottom: 4%;
   }
+  .artartpre
+  {
+    display: flex;
+    flex-direction: column;
+  }
   #artmotcle
   {
     width: 100%;

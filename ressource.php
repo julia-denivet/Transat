@@ -93,14 +93,15 @@ $resc=conseille($_SESSION['user'],'ressources');
            	{	//article
            		$cont=read($_GET['id'],'ressources');
            		?>
-           		<article>
+           		<article class="artartpre" >
            			<h><?=$cont[0]['titre']?></h>
-           			<section>
-           				<?=$cont[0]['article']?>
+           			<section id="contart">
+           				<?=$cont[0]['article']?>   
+                </section>
                   <a href="ressource/<?=$cont[0]['id']?>">lien vers le pdf</a>
            				<i><?=date("j/m/Y ", strtotime($cont[0]['date']))?></i>
-           				<p>catégorie : <a href=""><?=$cont[0]['categorie']?></a></p>
-           			</section>
+           				<p>catégorie : <a href="ressource.php?cat=<?=$cont[0]['categorie']?>"><?=$cont[0]['categorie']?></a></p>
+           			
            		</article>
            		<?php
            	}

@@ -176,9 +176,10 @@ $artc=conseille($_SESSION['user'],'article');
            	{	//article
            		$cont=read($_GET['id'],'article');
            		?>
-           		<article>
+           		<article class="artartpre">
            			<section id="contart">
-           				<?=$cont[0]['article']?>
+           				<?=$cont[0]['article']?>   
+                  </section>
            				<i><?=date("j/m/Y ", strtotime($cont[0]['date']))?></i>
                   <?php 
                       $mcledeco=decomotcle($cont[0]['mot'],$mot);
@@ -191,7 +192,7 @@ $artc=conseille($_SESSION['user'],'article');
                         ?></div><?php
                       }
                     ?>
-           			</section>
+           			
            		</article>
            		<?php
            	}
