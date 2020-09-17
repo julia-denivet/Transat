@@ -17,7 +17,7 @@ $resc=conseille($_SESSION['user'],'ressources');
 
     <body>
         <?php include('Header-Footer/header.php'); ?>
-        <main>
+        <main id="blogmain">
            <?php
            	if(!isset($_GET['id'])) 
            	{
@@ -31,12 +31,14 @@ $resc=conseille($_SESSION['user'],'ressources');
            			if(!isset($_GET['cat']))
            			{	
            				$db = new PDO('mysql:host=localhost;dbname=transat;charset=utf8', 'root', '');
-						$q = $db->prepare("SELECT DISTINCT categorie FROM ressources");
-						$q->execute();
+						      $q = $db->prepare("SELECT DISTINCT categorie FROM ressources");
+						      $q->execute();
 						//$q->debugDumpParams();
-						$repcat=$q->fetchAll();
+						      $repcat=$q->fetchAll();
 						?>
+            <section id="pannavblog">
 						<section>
+              <h3>Categorie</h3>
 						<?php
            				foreach ($repcat as $cat) 
            				{
@@ -55,9 +57,9 @@ $resc=conseille($_SESSION['user'],'ressources');
                                     {
                                         ?>
                                         <a href="ressource.php?id=<?=$ic['id']?>">
-           									<div>
+           									<div class="artlink resart">
            										<p><?=$ic['titre']?></p>
-           										<p><?=$ic['date']?></p>
+           										<p><?=date("j/m/Y ", strtotime($ic['date']))?></p>
            										<p><?=$ic['categorie']?></p>
            									</div>
            								</a>
@@ -65,20 +67,23 @@ $resc=conseille($_SESSION['user'],'ressources');
                                     }
   							?>
   						</div>
+            </section>
+            <section id="resblog">
   						<?php
            				$p=page(0,4,'ressources');
            				foreach ($p as $pl) 
            				{
            				?>
            				<a href="ressource.php?id=<?=$pl['id']?>">
-           					<div>
+           					<div class="artlink resart">
            						<p><?=$pl['titre']?></p>
-           						<p><?=$pl['date']?></p>
+           						<p><?=date("j/m/Y ", strtotime($pl['date']))?></p>
            						<p><?=$pl['categorie']?></p>
            					</div>
            				</a>
            				<?php
            				}
+          ?></section><?php 
            			}
 
            		
@@ -93,7 +98,7 @@ $resc=conseille($_SESSION['user'],'ressources');
            			<section>
            				<?=$cont[0]['article']?>
                   <a href="ressource/<?=$cont[0]['id']?>">lien vers le pdf</a>
-           				<i><?=$cont[0]['date']?></i>
+           				<i><?=date("j/m/Y ", strtotime($cont[0]['date']))?></i>
            				<p>catégorie : <a href=""><?=$cont[0]['categorie']?></a></p>
            			</section>
            		</article>

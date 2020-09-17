@@ -177,8 +177,7 @@ $artc=conseille($_SESSION['user'],'article');
            		$cont=read($_GET['id'],'article');
            		?>
            		<article>
-           			<h><?=$cont[0]['titre']?></h>
-           			<section>
+           			<section id="contart">
            				<?=$cont[0]['article']?>
            				<i><?=date("j/m/Y ", strtotime($cont[0]['date']))?></i>
                   <?php 

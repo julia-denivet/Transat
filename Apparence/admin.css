@@ -110,8 +110,10 @@ body
 }
 .editor {
     min-height: 300px;
-    width: 100%;
+    width: 95vw;
     border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .editor-commands>ul
