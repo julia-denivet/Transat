@@ -36,7 +36,8 @@ $resc=conseille($_SESSION['user'],'ressources');
                                 <?php include('planning.php')?>
                             </div>
                             <div>
-                                <div id="h1_h2_index">
+                    </div>
+                    <div id="h1_h2_index">
                                     <h1 id="h1_acceuil_newsletters">NEWSLETTERS</h1>
                                     
                                 </div>
@@ -78,7 +79,8 @@ $resc=conseille($_SESSION['user'],'ressources');
                                 </div>     
                             </div>
                         </div>     
-                    </div>
+                    
+                               
                 </div>
                 <div id="contSlid"> 
                 	<div class="slideshow">
