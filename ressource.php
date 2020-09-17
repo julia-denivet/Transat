@@ -37,8 +37,8 @@ $resc=conseille($_SESSION['user'],'ressources');
 						      $repcat=$q->fetchAll();
 						?>
             <section id="pannavblog">
-						<section>
-              <h3>Categorie</h3>
+						<section id="artmotcle">
+              <h3>Catégorie</h3>
 						<?php
            				foreach ($repcat as $cat) 
            				{
