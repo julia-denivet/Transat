@@ -505,6 +505,11 @@ textarea {
     background-size: 100% 100%;
     min-height: 80vh;
   }
+  #blogmain a:hover
+  {
+    text-decoration: none;
+
+  }
   #pannavblog
   {
     width: 30%;
@@ -568,6 +573,11 @@ textarea {
     background-size:100% 100%;
     background-attachment: fixed;
     color: #2f1f2e;
+    transition: all 0.5s ease-out;
+  }
+  .artlink:hover
+  {
+    transform: rotateX(-10deg) rotateY(10deg);
   }
   .artavmc
   {
@@ -585,4 +595,9 @@ textarea {
 {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+}
+.resart>p
+{
+    margin: 0;
 }
