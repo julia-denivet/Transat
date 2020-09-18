@@ -42,7 +42,7 @@ $resc=conseille($_SESSION['user'],'ressources');
                                     
                                 </div>
                                 <div class="entete">
-                                    <h3>Nos Derniers Articles</h3>
+                                    <h3 class="h3_index">Nos Derniers Articles</h3>
                                     <ul class="ulent">
                                         <?php
                                             foreach 
@@ -52,13 +52,13 @@ $resc=conseille($_SESSION['user'],'ressources');
                                                 <li>
                                                     <p><?=$ic['titre']?></p>
                                                     <p>le <?=date("j/m/Y",strtotime($ic['date']))?></p>
-                                                    <a href="article.php?id=<?=$ic['id']?>">Lire</a>
+                                                    <a class="a_index" href="article.php?id=<?=$ic['id']?>">Lire</a>
                                                 </li>
                                         <?php   
                                             }
                                         ?>
                                     </ul>
-                                    <h3>Ressources</h3>
+                                    <h3 class="h3_index">Ressources</h3>
                                     <h2 id="h2_acceuil_conseille">Conseillé pour vous</h2>
                                     <ul class="ulent">
                                         <?php
@@ -69,7 +69,7 @@ $resc=conseille($_SESSION['user'],'ressources');
                                                 <li>
                                                     <p><?=$ic['titre']?></p>
                                                     <p>Catégorie : <?=$ic['categorie']?></p>
-                                                    <a href="ressource.php?id=<?=$ic['id']?>">Lire</a>
+                                                    <a class="a_index" href="ressource.php?id=<?=$ic['id']?>">Lire</a>
                                                 </li>
                                         <?php   
                                             }
