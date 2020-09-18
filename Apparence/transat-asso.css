@@ -577,7 +577,7 @@ textarea {
   }
   .artlink:hover
   {
-    transform: rotateX(-10deg) rotateY(10deg);
+    transform: rotateX(-5deg) rotateY(10deg);
   }
   .artavmc
   {
