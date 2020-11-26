@@ -28,15 +28,12 @@ $resc=conseille($_SESSION['user'],'ressources');
         <?php include('Header-Footer/header.php'); ?>
         <main class="container-fluid">
             <div class="index_flex">
-                <div id="flex_planning_news_index">
                     <div class="newletters_index">
-                        <div class="plan-index">
-                            <h1 id="h1_acceuil_agenda">AGENDA</h1>
+                        <h1 id="h1_acceuil_agenda">AGENDA</h1>
                             <div id="newsplan">
                                 <?php include('planning.php')?>
                             </div>
-                            <div>
-                    </div>
+                    <div>
                     <div id="h1_h2_index">
                                     <h1 id="h1_acceuil_newsletters">NEWSLETTERS</h1>
                                     
@@ -78,31 +75,28 @@ $resc=conseille($_SESSION['user'],'ressources');
 
                                 </div>     
                             </div>
-                        </div>     
+                        
                     
                                
                 </div>
-                <div id="contSlid"> 
-                	<div class="slideshow">
-                    	<ul>
-                        	<li><img class="img_slideshow" src="Medias/Transat/img1.jpg" alt="" /></li>
-	                    	<li><img class="img_slideshow" src="Medias/Transat/img2.jpg" alt=""  /></li>
-	                    	<li><img class="img_slideshow" src="Medias/Transat/img3.jpg" alt="" /></li>
-                    	</ul>
-                	</div>
-                	<div id="text-index">
+                <section id="sectionind">
+                    <h1 class="slog_ind">La transidentité sur marseille</h1>
+                <div class="slideshow">
+                    <ul>
+                        <li><img class="imgslide" src="Medias/Transat/img1.jpg" alt=""/></li>
+                        <li><img class="imgslide" src="Medias/Transat/img2.jpg" alt="" /></li>
+                        <li><img class="imgslide" src="Medias/Transat/img3.jpg" alt=""/></li>
+                        <li><img class="imgslide" src="Medias/Transat/img2.jpg" alt="" /></li>
+                    </ul>
+                </div>
+                <div id="text-index">
                 	L'association Transat est un collectif de personnes trans, à visée militante et d'entraide, basé sur Marseille et ses environs. Aujourd'hui, le sujet de la transidentité est encore très méconnu du grand public. Les personnes trans sont encore largement exposées au quotidien à des préjugés transphobes. Par ailleurs, ces préjugés peuvent venir ralentir ou empêcher des démarches de transition (changer d'état civil, accéder à des traitements médicaux etc.) souvent nécessaires pour le bien-être des personnes. Dans ce cadre, nos actions visent à sensibiliser le public à la question de la transidentité, et apporter du soutien aux personnes concerné.es, dans un objectif de défense de nos droits et de lutte contre la transphobie. Nos objectifs : → sensibiliser la société aux problématiques liées à la transidentité ; → s'entraider entre personnes trans ; → défendre et plaider pour les droits des personnes trans ; → lutter contre la transphobie. Nous organisons des permanences et des activités pour les personnes trans et leurs proches, dans une démarche de valorisation de l'échange, de soutien, d'écoute, et d'empowerment. Nous organisons et participons à des événements et/ou formations, dans le but de sensibiliser le public aux questions ayant trait à la transidentité. Nous allons à la rencontre des institutions publiques ou privées pour faire valoir les droits des personnes trans. Nous nous inscrivons dans une approche inclusive, féministe et intersectionnelle, et privilégions autant que possible une posture d'ouverture et de dialogue.
                 	</div>
-                </div>
-
-
-
-
-                       
-            </div>    
+                </section>                  
+            </div>  
                                 
-                    
             <script type="text/javascript" src="Apparence/carousel.js" async="true"></script>
+           
         </main>
         <?php include('Header-Footer/footer.php'); ?>
     </body>
