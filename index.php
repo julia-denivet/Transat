@@ -33,7 +33,7 @@ $resc=conseille($_SESSION['user'],'ressources');
                             <div id="newsplan">
                                 <?php include('planning.php')?>
                             </div>
-                    <div>
+                    <div id="afterPlan">
                     <div id="h1_h2_index">
                                     <h1 id="h1_acceuil_newsletters">NEWSLETTERS</h1>
                                     
@@ -47,8 +47,8 @@ $resc=conseille($_SESSION['user'],'ressources');
                                             {
                                         ?>
                                                 <li>
-                                                    <p><?=$ic['titre']?></p>
-                                                    <p>le <?=date("j/m/Y",strtotime($ic['date']))?></p>
+                                                    <p class="indpTire"><?=$ic['titre']?></p>
+                                                    <p class="indpDate">le <?=date("j/m/Y",strtotime($ic['date']))?></p>
                                                     <a class="a_index" href="article.php?id=<?=$ic['id']?>">Lire</a>
                                                 </li>
                                         <?php   

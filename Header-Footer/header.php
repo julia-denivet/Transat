@@ -16,11 +16,11 @@
         <a class="a_header" href="contact.php">Contact</a>
         <!--<a class="a_header" href="vide-dressing.php">Vide dressing</a> !-->
         <div class="form_recherche_header">
-            <form class="form-inline my-2 my-lg-0 ">
+            <form class="formHeader">
                 <section>
                     <article>
-                        <input class="form-control mr-sm-2 " id="autotransat" type="search" onkeyup="autocompletiontransat('0')" placeholder="Search" aria-label="Search">
-                        <input class="btn btn-outline-success color_search" type="submit"></submit>
+                        <input class="" id="autotransat" type="search" onkeyup="autocompletiontransat('0')" placeholder="Search" aria-label="Search">
+                        <input id="subRechHeader" type="submit" value="&#xe800;" >
                     </article>
                     <article id="datatransat">
 

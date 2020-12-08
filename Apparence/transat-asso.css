@@ -1,12 +1,25 @@
 /*
 couleur
 {
+    mauveviolet:#825972;
     mauve:#e5dcf1;
     rose:#f4cbee; 
     bleuclair:#acc9e7;
+    bleufoncé:#8D9FB3;
 }
 
 */
+
+@font-face {
+      font-family: 'loupe';
+      src: url('./font/loupe.eot?89286350');
+      src: url('./font/loupe.eot?89286350#iefix') format('embedded-opentype'),
+           url('./font/loupe.woff?89286350') format('woff'),
+           url('./font/loupe.ttf?89286350') format('truetype'),
+           url('./font/loupe.svg?89286350#loupe') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
 @font-face {
     font-family: "PT sans";
     src: url("font/PTSans-Regular.ttf") format("truetype");
@@ -66,6 +79,8 @@ body {
     font-size: 450%;
     font-family: 'letgot', cursive;
     font-weight: bold;
+    color: #825972;
+    text-shadow: 2px 0px 0px #fff;
 }
 
 .logo {
@@ -75,7 +90,9 @@ body {
 .header 
 {
     background-color: #acc9e7;
-    font-size: 20px;
+    border-top: solid 2px #8d9fb3; 
+    border-bottom: solid 2px #8d9fb3;  
+    /*font-size: 20px;*/
 }
 
 .nav_header {
@@ -86,13 +103,15 @@ body {
 
 .a_header {
     text-decoration: none;
-    color: black;
+    color: #3d4748;
     font-family: 'letgot';
+    font-size: 1.5vw;
+    transition: all 0.6s;
 }
 
 .a_header:hover {
     text-decoration: none;
-    color: #551A8B;
+    color: white;
 }
 
 #datatransat {
@@ -136,6 +155,54 @@ body {
     height: 50vh;
 }
 
+.formHeader
+{
+    margin: 0;
+}
+.formHeader > section
+{
+    
+}
+.formHeader > section > article
+{
+    display: flex;
+    justify-content: space-between;
+}
+#autotransat
+{
+    /*font-family: 'letgot';*/
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: white;
+    width: 70%;
+    font-size: 1vw;
+    border-radius: 6px;
+    padding-left: 1%;
+    border: solid 2px #8d9fb3;
+}
+#subRechHeader
+{
+    font-family: 'loupe';
+    color: white;
+    background-color: #825972 ;
+    box-shadow: 1px 1px 3px #686161;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    font-size: 1vw;
+    border-radius: 6px;
+    font-size: 1vw;
+    transition: all 0.5s ;
+}
+#subRechHeader:hover
+{
+     background-color: #F4CBEE ;
+     color: #825972;
+     text-shadow:  2px 0px 0px #fff;
+     box-shadow: 3px 3px 3px #686161;
+}
 
 /*PRE-INDEX*/
 
@@ -188,20 +255,23 @@ body {
     flex-direction: column;
     width: 70%;
     align-items: center;
-    background-color: white;
+    background-color: #825972;
     height: max-content;
     padding-bottom: 1%;
-    box-shadow: 1px 1px 7px black;
+    box-shadow: 1px 1px 7px #3d4748;
 }
 .slog_ind
 {
     font-family: 'Amatic SC';
     text-transform: capitalize;
+    color: white;
+    font-size: 7vw;
 
 }
 .container-fluid {
     padding: 0;
     margin-top: 2%;
+    margin-bottom: 1%;
 }
 .slideshow 
 {
@@ -234,11 +304,11 @@ body {
     flex-direction: column;
     align-items: center;
     max-height: 70rem;
-    background-color: #acc9e7;
+    background-color: #8D9FB3;
     transition: box-shadow 1s, transform 1s;
     width: 25%;
     height: max-content;
-    box-shadow: 1px 1px 7px black;
+    box-shadow: 1px 1px 7px #3d4748;
 
 }
 
@@ -249,7 +319,6 @@ body {
     width: 97%;
     margin-top: 1%;
     background-color: #acc9e7;
-    border-radius: 10px;
     transition: box-shadow 1s, transform 1s;
     font-size: 20px;
     font-family: "PT sans";
@@ -270,12 +339,14 @@ body {
     text-align: center;
     font-family: "PT sans";
     margin-top: 10%;
+    color: white;
 }
 
 #h1_acceuil_newsletters {
     font-family: "PT sans";
     text-align: center;
     margin-top: 10%;
+    color: white;
 }
 
 #h2_acceuil_conseille {
@@ -284,6 +355,9 @@ body {
 }
 
 
+#afterPlan
+{
+    width: 90%;
 }
 .newletters_index:hover {
      box-shadow: 2px 2px 10px black;
@@ -298,14 +372,23 @@ body {
     width: 100%;
     font-family: "PT sans";
     font-size: 20px;
+    margin: 0;
+    padding:0;
     
 }
 .ulent li {
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
 }
 
+.indpTire
+{
+    flex:3;
+}
+.indpDate
+{
+    flex:4;
+}
 .a_index{
     color: black;
 }
@@ -387,7 +470,7 @@ body {
 table.planning_transat {
     text-align: center;
     border-collapse: collapse;
-    box-shadow: 1px 1px 7px black;
+    box-shadow: 1px 1px 7px #3d4748;
     width: 100%;
     background-color: #e5dcf1;
 }
