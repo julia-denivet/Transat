@@ -19,7 +19,7 @@ include('function.php');
        
     </head>
 
-    <body class="container-fluid">
+    <body>
         <?php include('Header-Footer/header.php'); ?>
         <main id="main_planning">
            <section id="plan">

@@ -61,9 +61,9 @@ $resc=conseille($_SESSION['user'],'ressources');
                                         ?>
                                         <a href="ressource.php?id=<?=$ic['id']?>">
            									<div class="artlink resart">
-           										<p><?=$ic['titre']?></p>
-           										<p><?=date("j/m/Y ", strtotime($ic['date']))?></p>
-           										<p><?=$ic['categorie']?></p>
+           										<p class="altitre"><?=$ic['titre']?></p>
+           										<p class="aldate"><?=date("j/m/Y ", strtotime($ic['date']))?></p>
+           										<p class="alcate"><?=$ic['categorie']?></p>
            									</div>
            								</a>
                             			<?php   
@@ -79,9 +79,9 @@ $resc=conseille($_SESSION['user'],'ressources');
            				?>
            				<a href="ressource.php?id=<?=$pl['id']?>">
            					<div class="artlink resart">
-           						<p><?=$pl['titre']?></p>
-           						<p><?=date("j/m/Y ", strtotime($pl['date']))?></p>
-           						<p><?=$pl['categorie']?></p>
+           						<p class="altitre"><?=$pl['titre']?></p>
+           						<p class="aldate"><?=date("j/m/Y ", strtotime($pl['date']))?></p>
+           						<p class="alcate"><?=$pl['categorie']?></p>
            					</div>
            				</a>
            				<?php

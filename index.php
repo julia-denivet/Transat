@@ -29,13 +29,13 @@ $resc=conseille($_SESSION['user'],'ressources');
         <main class="container-fluid">
             <div class="index_flex">
                     <div class="newletters_index">
-                        <h1 id="h1_acceuil_agenda">AGENDA</h1>
+                        <h1 id="h1_acceuil_agenda">Agenda</h1>
                             <div id="newsplan">
                                 <?php include('planning.php')?>
                             </div>
                     <div id="afterPlan">
                     <div id="h1_h2_index">
-                                    <h1 id="h1_acceuil_newsletters">NEWSLETTERS</h1>
+                                    <h1 id="h1_acceuil_newsletters">Newsletters</h1>
                                     
                                 </div>
                                 <div class="entete">
@@ -48,15 +48,16 @@ $resc=conseille($_SESSION['user'],'ressources');
                                         ?>
                                                 <li>
                                                     <p class="indpTire"><?=$ic['titre']?></p>
-                                                    <p class="indpDate">le <?=date("j/m/Y",strtotime($ic['date']))?></p>
-                                                    <a class="a_index" href="article.php?id=<?=$ic['id']?>">Lire</a>
+                                                    <div class="ulentDatLink">
+                                                        <p class="indpDate">le <?=date("j/m/Y",strtotime($ic['date']))?></p>
+                                                        <a class="a_index" href="article.php?id=<?=$ic['id']?>">Lire</a>
+                                                    </div>
                                                 </li>
                                         <?php   
                                             }
                                         ?>
                                     </ul>
-                                    <h3 class="h3_index">Ressources</h3>
-                                    <h2 id="h2_acceuil_conseille">Conseillé pour vous</h2>
+                                    <h3 id="" class="h3_index">Conseillé pour vous</h2>
                                     <ul class="ulent">
                                         <?php
                                             foreach 
@@ -64,9 +65,11 @@ $resc=conseille($_SESSION['user'],'ressources');
                                             {
                                         ?>
                                                 <li>
-                                                    <p><?=$ic['titre']?></p>
-                                                    <p>Catégorie : <?=$ic['categorie']?></p>
-                                                    <a class="a_index" href="ressource.php?id=<?=$ic['id']?>">Lire</a>
+                                                    <p class="indpTire1"><?=$ic['titre']?></p>
+                                                    <div class="ulentDatLink">
+                                                        <p class="indpTireCat">Catégorie : <?=$ic['categorie']?></p>
+                                                        <a class="a_index" href="ressource.php?id=<?=$ic['id']?>">Lire</a>
+                                                    </div>
                                                 </li>
                                         <?php   
                                             }

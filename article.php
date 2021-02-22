@@ -28,7 +28,7 @@ $artc=conseille($_SESSION['user'],'article');
               ?>
               <section id="pannavblog">
               <div id="artmotcle">
-              <h3>mots clé(3 maximum)</h3>
+              <h3>Mots clé(3 maximum)</h3>
               <div id="globmocle">
               <?php  
               foreach ($mot as $m) 
@@ -102,7 +102,7 @@ $artc=conseille($_SESSION['user'],'article');
                     <?php 
                       $mcledeco=decomotcle($ic['mot'],$mot);
                       if(!empty($mcledeco))
-                      {?><i>mot(s)-clé(s):</i><div class="divartmotcle"><?php
+                      {?><i>Mot(s)-clé(s):</i><div class="divartmotcle"><?php
                         foreach ($mcledeco as $lmot) 
                         {
                           ?><b><?=$lmot?></b><?php
@@ -153,13 +153,13 @@ $artc=conseille($_SESSION['user'],'article');
            					<a href="article.php?id=<?=$pl['id']?>">
            						<div class="artlink">
                         <div class="artavmc">
-           							  <p>titre : <?=$pl['titre']?></p>
+           							  <p>Titre : <?=$pl['titre']?></p>
            							  <p><?=date("j/m/Y ", strtotime($pl['date']))?></p>
                         </div>
                         <?php 
                         $mcledeco=decomotcle($pl['mot'],$mot);
                         if(!empty($mcledeco))
-                        {?><i>mot(s)-clé(s):</i><div class="divartmotcle"><?php
+                        {?><i>Mot(s)-clé(s):</i><div class="divartmotcle"><?php
                          foreach ($mcledeco as $lmot) 
                         {
                           ?><b><?=$lmot?></b><?php

@@ -4,13 +4,13 @@
             <h1>CONTACTS</h1>
 			<section id="contact_section_blanc">
 				<form id="contact_form" method="post">
-					<fieldset><legend>VOS COORDONNEES</legend>
-                        <input type="text" id="nom" name="nom" tabindex="1" placeholder="NOM" required/>
-                        <input type="text" id="prenom" name="prenom" tabindex="2" placeholder="PRENOM" required/>
-						<input type="text" id="email" name="email" tabindex="3" placeholder="MAIL" required/>
+					<fieldset><legend>Vos coordonnées</legend>
+                        <input type="text" id="nom" name="nom" tabindex="1" placeholder="Nom" required/>
+                        <input type="text" id="prenom" name="prenom" tabindex="2" placeholder="Prenom" required/>
+						<input type="text" id="email" name="email" tabindex="3" placeholder="Mail" required/>
 					</fieldset>
 
-					<fieldset><legend>VOTRE MESSAGE</legend>
+					<fieldset><legend>Votre message</legend>
                         <select  id="objet"  name="objet" tabindex="4" placeholder="OBJET"name="sujet" required>
                                 <option value="sujet-1" selected>-Sujet-</option>
                                 <option value="m">Médical</option>
@@ -18,8 +18,8 @@
                                 <option value="s">Sociale</option>
                                 <option value="a">Autres sujets</option>
                         </select>
-						<textarea name="message" placeholder="MESSAGE" required></textarea>
-                        <input type="submit" name="Valider" class="btn btn-primary button_valider"></input>
+						<textarea name="message" placeholder="Message" required></textarea>
+                        <input type="submit" name="Valider" class="button_valider"></input>
                     
 					</fieldset>
 				</form>

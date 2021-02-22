@@ -54,6 +54,7 @@
 	 $rep=$q->fetchAll();
 	//var_dump($rep); ?>
 	<div class="tableau_button_transat">
+
 		<table class="planning_transat">
 			<thead>
 				<tr id="planning_header_jours">
@@ -123,10 +124,10 @@
 									$type="non mixte";
 								}
 							?>
-							<div onclick="fichEv(this)" class="rdv" style="background:<?=$col?>; border-radius:5px;">
+							<div onclick="fichEv(this)" class="rdv" style="background:<?=$col?>; border-radius:5px; ">
 									<img class="type-ev" src="Medias/Logos/plan/<?=$r['cat']?>.png">
 									<p><?=$r['titre']?></p>
-									<div class="fich-ev" hidden=true>
+									<div class="fich-ev" style="display: none;">
 										<h1><?=$r['titre']?></h1>
 										<p>debut : <?=$r['hdeb']."h".$r['mdeb']?></p>
 										<p>fin : <?=$r['hfin']."h".$r['mfin']?></p>
@@ -169,15 +170,15 @@
 		</table>
 		<div id="planbutt" class="button_flex_planning">
 		
-			<button id="butplanp" class="button_precedent btn" onclick="changplan(<?=$moi-1?>,<?=$ann?>)">précédent</button>
+			<button id="butplanp" class="button_precedent " onclick="changplan(<?=$moi-1?>,<?=$ann?>)">précédent</button>
 		
 		
-			<button id="butplans" class="button_suivant btn" onclick="changplan(<?=$moi+1?>,<?=$ann?>)">suivant</button>
+			<button id="butplans" class="button_suivant " onclick="changplan(<?=$moi+1?>,<?=$ann?>)">suivant</button>
 			
-	</div>	
+		</div>	
 	</div>
 	
-	<h1 class='h1_calendrier_transat pasindex'><?=$nommoi?></h1>
+	<h1 class='h1_calendrier_transat pasindex'><?=utf8_encode ($nommoi)?></h1>
 
 </div>
 
@@ -195,15 +196,24 @@
   			httpRequest.send();
 	}
 	function fichEv(elmnt)
-	{	console.log('test');
+	{	
 		ress=elmnt.children[2];
-		console.log(ress);
-		ress.hidden=false;
+		ress.style.display='flex';
+		
+		ress.className='fich-ev';
 	}
 	function retfichEv(elmnt)
 	{
-		ress=elmnt.parentElement;
-		ress.style.display="none";
+		fich=elmnt.parentElement;
+		console.log(fich);
+		fich.style.display='none';
+		console.log(fich);
+		fich.hidden=true;
+		console.log(fich);
+		/*
+		ress.hidden=false;
 		console.log(ress);
+		*/
+
 	}	
 </script>
